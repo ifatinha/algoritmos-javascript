@@ -1,6 +1,7 @@
 /**
  * Aplicação simples que verifica a data de ultimo acesso de um usuario e
  * de acordo com essa data envia uma mensagem para o usuário
+ * 
  */
 
 const lastAccessedDate = new Date("2022-01-25 17:00");
