@@ -8,6 +8,6 @@ import scanner from "readline-sync"
 let horas = scanner.question("Digite uma hora no formato h.mm: ");
 let hora = horas.split(".");
 let minutos = parseInt(hora[0]) * 60;
-minutos = minutos + parseInt(hora[1]);
+minutos = minutos + (parseInt(hora[1]));
 
 console.log(horas + " equivale a " + minutos + " minutos");
