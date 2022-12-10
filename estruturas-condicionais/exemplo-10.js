@@ -23,3 +23,9 @@ data2.setFullYear(scanner.questionInt("Ano: "));
 
 console.log("Primeida data: " + data1.toLocaleString());
 console.log("Primeida data: " + data2.toLocaleString());
+
+if(data1 > data2){
+    console.log(data1.toLocaleDateString()+" é maior que "+data2.toLocaleDateString());
+}else{
+    console.log(data2.toLocaleDateString()+" é maior que "+data2.toLocaleDateString());
+}
