@@ -27,7 +27,7 @@ do {
 
     console.log("Bem-vindo - escolha uma das opções abaixo.");
     console.log("1 - Consultar Voos");
-    console.log("2 - Esfetur reserva");
+    console.log("2 - Efetuar reserva");
     console.log("0 - Sair");
     opcao = scanner.questionInt("Opção: ");
 
@@ -121,9 +121,41 @@ do {
             } while (opcao !== 4);
 
             break;
-
         case 2:
-            console.log("Reserva de voo");
+            console.log("Sistema de Reservas de voo");
+
+            let numVoo = scanner.questionInt("Informe o número do voo: ");
+            let indice = numeroVoo.findIndex(function (numero) {
+                return numVoo === numero;
+            });
+
+            console.clear();
+
+            if (indice !== -1) {
+
+                console.log("Detalhes do voo");
+                console.log("Número".padEnd(50, ".") + ": " + numeroVoo[indice]);
+                console.log("Origem".padEnd(50, ".") + ": " + origem[indice]);
+                console.log("Destino".padEnd(50, ".") + ": " + destino[indice]);
+                console.log("Assentos disponiveis".padEnd(50, ".") + ": " + lugares[indice]);
+
+                if (lugares[indice] > 0) {
+                    let qtdLugares = scanner.questionInt("Quantos assentos você deseja reservar? ");
+
+                    if (qtdLugares <= lugares[indice]) {
+                        lugares[indice] -= qtdLugares;
+                        console.log("Assentos reservados com sucesso!");
+                    } else if (qtdLugares > lugares[indice]) {
+                        console.log("Desculpe! Você está tentando reservar um numero de assento superior aos disponiveis. Tente novamente!");
+                    } else {
+                        console.log("Desculpe! Voo Lotado.");
+                    }
+                } else {
+                    console.log("Não há mais lugares disponiveis neste voo!");
+                }
+            } else {
+                console.log("Não foi encontrado nenhum voo com o número " + numVoo);
+            }
             break;
         case 0:
             console.log("Aplicação encerrada.");
