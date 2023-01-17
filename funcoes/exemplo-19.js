@@ -1,4 +1,4 @@
-/** Capitulo 06 - sub-rotinas: Exemplo 18
+/** Capitulo 06 - sub-rotinas: Exemplo 19
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 function lerDados() {
@@ -6,7 +6,7 @@ function lerDados() {
     for (let i = 0; i < 6; i++) {
         const vet = [];
         for (let j = 0; j < 6; j++) {
-            vet.push(Math.floor((Math.random() * 999) + 1));
+            vet.push(Math.floor((Math.random() * 99) + 1));
         }
         numeros.push(vet);
     }
@@ -18,34 +18,37 @@ function pegarElemento(arr, posicao) {
     return arr[posicao];
 }
 
-function menorElemento(vet) {
-    let aux = vet[0];
-    for (let i = 1; i < 6; i++) {
-        if (vet[i] < aux) {
-            aux = vet[i];
-        }
-    }
-
-    return aux;
-}
-
-function elementosDiagonalSecundaria(mat) {
+function diagonalPrincipal(mat) {
     const vet = [];
-    let contador = 5;
+    let contador = 0;
     for (let i = 0; i < 6; i++) {
         const aux = mat[i];
         vet.push(pegarElemento(aux, contador));
-        contador--;
+        contador++;
     }
 
     return vet;
 }
 
+function multiplicarElementos(mat, dp) {
+    const produto = [];
+    for (let i = 0; i < 6; i++) {
+        const aux = mat[i];
+        const mult = [];
+        for (let j = 0; j < 6; j++) {
+            mult.push(aux[j] * dp[i]);
+        }
+
+        produto.push(mult);
+    }
+
+    return produto;
+}
+
 const matriz = lerDados();
 console.log("Matriz de Elementos\n" + matriz.join(" \n"));
 
-const diagonal = elementosDiagonalSecundaria(matriz);
-console.log("\nElementos da Diagonal Secundária: " + diagonal.join(", "));
+const diagonal = diagonalPrincipal(matriz);
+console.log("\nDiagonal Principal: " + diagonal.join(", "));
 
-let menorNumero = menorElemento(diagonal);
-console.log("O menor elemento da diagonal secundária é " + menorNumero);
+console.log("\nMatriz Produto\n" + multiplicarElementos(matriz, diagonal).join("\n"));
