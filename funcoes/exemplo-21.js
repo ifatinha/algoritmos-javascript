@@ -1,15 +1,20 @@
 /** Capitulo 06 - sub-rotinas: Exemplo 21
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-function lerDados() {
-    const matriz = [];
-    for (let i = 0; i < 12; i++) {
-        const linha = [];
-        for (let j = 0; j < 12; j++) {
-            linha.push(Math.floor((Math.random() * 99) + 1));
-        }
-        matriz.push(linha);
+import scanner from 'readline-sync'
+
+let x, y;
+
+do {
+    x = scanner.questionInt("Valor de X: ");
+    y = scanner.questionInt("Valor de Y > X: ");
+
+    while (v <= x) {
+        y = scanner.questionInt("O valor de Y deve maior que o valor de X. Valor de Y: ");
     }
 
-    return matriz;
+} while (x !== y)
+
+function primos(x, y) {
+    
 }
