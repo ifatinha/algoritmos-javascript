@@ -1,4 +1,4 @@
-/** Capitulo 06 - sub-rotinas: Exemplo 14
+/** Capitulo 08 - sub-rotinas: Exemplo 14
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 const numeros1 = [];

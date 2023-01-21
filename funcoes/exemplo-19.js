@@ -1,4 +1,4 @@
-/** Capitulo 06 - sub-rotinas: Exemplo 19
+/** Capitulo 08 - sub-rotinas: Exemplo 19
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 function lerDados() {
