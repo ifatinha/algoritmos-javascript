@@ -42,12 +42,28 @@ function maiorSalario(salarios) {
     return maior;
 }
 
+function percentualSalarial(salarios) {
+    let qtd = 0;
+    for (let i = 0; i < salarios.length; i++) {
+        if (salarios[i] < 1200) {
+            qtd++;
+        }
+    }
+
+    let percentual = (100 * qtd) / salarios.length;
+
+    return percentual;
+}
+
 lerDados();
 let mediaSalarios = salarios.reduce(somaSalarial) / salarios.length;
 console.log("Média Salarial da população: " + mediaSalarios.toFixed(2));
 
 let mediaFilhos = filhos.reduce(totalFilhos) / filhos.length;
-console.log("Média de Filhos da população: " + mediaFilhos);
+console.log("Média de Filhos da população: " + mediaFilhos.toFixed(2));
 
 let maiorSal = maiorSalario(salarios);
 console.log("Maior sálario: " + maiorSal.toFixed(2));
+
+let percentual = percentualSalarial(salarios);
+console.log("Percentual de pessoas que recebem menos de R$1200.00 foi de " + percentual.toFixed(2) + "%");

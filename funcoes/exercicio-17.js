@@ -4,42 +4,22 @@
 import scanner from 'readline-sync';
 
 function calcularMDC(num1, num2) {
-    let mdc = 1;
-    let divisores = [];
+    let resto;
 
-    if (num1 % num2 === 0) {
-        mdc = num2;
-    } else if (num2 % num1 === 0) {
-        mdc = num1;
-    } else if ((num1 + 1 === num2) || (num1 - 1 === num2)) {
-        mdc = 1;
-    } else {
-        let divisor = 2;
-        console.log("Divisores");
-        while (num1 !== 1 || num2 !== 1) {
+    do {
 
-            if (num1 % divisor === 0 && num2 % divisor === 0) {
-                mdc *= divisor;
-            }
+        resto = num1 % num2;
+        num1 = num2;
+        num2 = resto;
 
-            while (num1 % divisor === 0) {
-                num1 = num1 / divisor;
-            }
+    } while (resto !== 0);
 
-            while (num2 % divisor === 0) {
-                num2 = num2 / divisor;
-            }
-
-            divisor++;
-        }
-    }
-
-    return mdc;
+    return num1;
 }
 
 console.log("Cálculo do Máximo Divisor Comum");
 let num1 = scanner.questionInt("Digite o primeiro numero: ");
 let num2 = scanner.questionInt("Digite o segundo numero: ");
 
-let divisor = calcularMDC(num1, num2);
-console.log("O MDC de " + num1 + " e " + num2 + " = " + divisor);
+let mdc = calcularMDC(num1, num2);
+console.log("O MDC de " + num1 + " e " + num2 + " = " + mdc);
