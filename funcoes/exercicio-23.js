@@ -11,14 +11,35 @@ function verificarTriangulo(a, b, c) {
     }
 }
 
+function tipoTriangulo(a, b, c) {
+    if (a === b && b === c) {
+        return "equilátero";
+    } else if (a === b || b === c || a === c) {
+        return "escaleno";
+    } else {
+        return "isósceles";
+    }
+}
+
 let lado1 = scanner.questionFloat("Lado 01: ");
+while (lado1 <= 0) {
+    lado1 = scanner.questionFloat("Valor inválido! Dgite um valor positivo para o lado 01: ");
+}
+
 let lado2 = scanner.questionFloat("Lado 02: ");
+while (lado2 <= 0) {
+    lado2 = scanner.questionFloat("Valor inválido! Dgite um valor positivo para o lado 02: ");
+}
+
 let lado3 = scanner.questionFloat("Lado 03: ");
+while (lado3 <= 0) {
+    lado3 = scanner.questionFloat("Valor inválido! Dgite um valor positivo para o lado 03: ");
+}
 
 let eTriangulo = verificarTriangulo(lado1, lado2, lado3);
 
 if (eTriangulo) {
-    console.log("As medidas formam um triângulo...");
+    console.log("As medidas formam um triângulo " + tipoTriangulo(lado1, lado2, lado3));
 } else {
     console.log("As medidas não formam triângulo...");
 }
