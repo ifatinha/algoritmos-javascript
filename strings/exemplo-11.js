@@ -3,8 +3,17 @@
 
 import scanner from 'readline-sync'
 
-function substituir(frase) {
-    let novaFrase = frase.replace(palavra1, "Estudante");
+function adicionarPalavra(frase) {
+    let palavras = frase.split(" ");
+    let novaFrase = "";
+
+    for (let i = 0; i < palavras.length; i++) {
+        novaFrase += " " + palavras[i];
+
+        if (palavras[i].toLowerCase().includes("teclado")) {
+            novaFrase += " ou mouse";
+        }
+    }
 
     return novaFrase;
 }
@@ -13,5 +22,6 @@ let frase = scanner.question("Digite uma frase: ");
 console.clear();
 
 console.log("Frase digitada: " + frase);
-let fraseAtualizada = pesquisarPalavra(frase);
+
+let fraseAtualizada = adicionarPalavra(frase);
 console.log("Frase Atualizada: " + fraseAtualizada);
