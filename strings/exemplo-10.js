@@ -3,17 +3,18 @@
 
 import scanner from 'readline-sync'
 
-function pesquisarPalavra(frase, palavra) {
-    let regex = new RegExp(palavra, 'gi');
-    let qtd = frase.match(regex);
-    
-    return qtd;
+function substituirPalavra(frase, palavra1, palavra2) {
+    let novaFrase = frase.replace(palavra1, "Estudante");
+    novaFrase = novaFrase.replace(palavra2, "Universidade");
+
+    return novaFrase;
 }
 
 let frase = scanner.question("Digite uma frase: ");
-let palavra = scanner.question("Digite uma palavra: ");
+let palavra1 = scanner.question("Digite a primeira palavra que voce gostaria de substituir: ");
+let palavra2 = scanner.question("Digite a segunda palavra que voce gostaria de substituir: ");
 console.clear();
 
 console.log("Frase digitada: " + frase);
-let qtd = pesquisarPalavra(frase, palavra);
-console.log("A palavra " + palavra + " aparece " + qtd.length + " na frase digitada.");
+let fraseAtualizada = substituirPalavra(frase, palavra1, palavra2);
+console.log("Frase Atualizada: " + fraseAtualizada);
