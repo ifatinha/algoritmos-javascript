@@ -9,29 +9,27 @@ function contarLetras(texto) {
     let letra2 = "";
     let maior = 0;
 
-    do {
+    while (contador < texto.length) {
 
         qtdVezes = 0;
         let letra = texto.charAt(contador);
 
-        while (letra === texto.charAt(contador)) {
-            console.log("Vezes: " + qtdVezes);
-            qtdVezes++;
-            contador++;
+        while (contador < texto.length && letra === texto.charAt(contador)) {
+            if (letra === texto.charAt(contador)) {
+                qtdVezes++;
+                contador++;
+            }
+
+            if (qtdVezes > maior) {
+                maior = qtdVezes;
+                letra2 = letra;
+            }
+
         }
+    }
 
-        console.log("A letra " + letra + " aparece " + qtdVezes);
+    console.log("A letra " + letra2 + " aparece " + maior + " na sequencia.");
 
-        if (qtdVezes > maior) {
-            maior = qtdVezes;
-            letra2 = letra;
-        }
-
-        console.log(contador);
-        contador++;
-    } while (contador <= texto.length);
-
-    //console.log("A letra " + letra2 + " aparece " + maior + " na frase.");
 }
 
 let texto = scanner.question("Digite uma sequencia de letras: ");
