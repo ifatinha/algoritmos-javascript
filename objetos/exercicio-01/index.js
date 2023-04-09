@@ -26,8 +26,8 @@ do {
             break;
 
         case 4:
-            console.log("Quantidade de carros que não pagam impostos: " + semImpostos.length);
             const semImpostos = gerenciador.carrosQueNaoPagamImpostos(carros);
+            console.log("Quantidade de carros que não pagam impostos: " + semImpostos.length);
             gerenciador.listarCarros(semImpostos);
             break;
 
