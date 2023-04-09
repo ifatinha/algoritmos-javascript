@@ -2,33 +2,33 @@
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 import Carro from "./classes/carro.js";
-import gereciador from "./util/gereciador.js";
+import gerenciador from "./util/gerenciador.js";
 
 let carros = [];
 let opcao;
 
 do {
-    opcao = gereciador.menu();
+    opcao = gerenciador.menu();
 
     switch (opcao) {
 
         case 1:
-            carros = gereciador.cadastrarCarro(carros);
+            carros = gerenciador.cadastrarCarro(carros);
             break;
 
         case 2:
             console.log("Carros cadastrados: " + carros.length + "\n");
-            gereciador.listarCarros(carros);
+            gerenciador.listarCarros(carros);
             break;
 
         case 3:
-            console.log("Total de Impostos: R$" + gereciador.totalImpostos(carros));
+            console.log("Total de Impostos: R$" + gerenciador.totalImpostos(carros));
             break;
 
         case 4:
             console.log("Carros com que não pagam impostos\n");
-            const semImpostos = gereciador.carrosQueNaoPagamImpostos(carros);
-            gereciador.listarCarros(semImpostos);
+            const semImpostos = gerenciador.carrosQueNaoPagamImpostos(carros);
+            gerenciador.listarCarros(semImpostos);
             break;
 
         case 5:
