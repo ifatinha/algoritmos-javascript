@@ -1,11 +1,11 @@
 import scanner from 'readline-sync';
-import Office from '../classes/office.js';
-import Employee from '../classes/employee.js';
+import Cargo from '../classes/Cargo.js';
+import Funcionario from '../classes/Funcionario.js';
 
 function registerOffice() {
     const code = +Math.floor((Math.random() * 1000) + 1);
     const hourlyRate = Math.floor(Math.floor(Math.random() * 100) + 5);
-    const office = new Office(code, hourlyRate);
+    const office = new Cargo(code, hourlyRate);
     return office;
 }
 
@@ -24,7 +24,7 @@ function registerEmployee(offices) {
 
     let quantityHoursWorked = scanner.questionInt("Digite a quantidade de horas trabalhadas pelo funcionário: ");
 
-    const employee = new Employee(offices[index], sex, quantityHoursWorked);
+    const employee = new Funcionario(offices[index], sex, quantityHoursWorked);
     return employee;
 }
 

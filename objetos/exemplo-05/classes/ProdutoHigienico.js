@@ -1,4 +1,4 @@
-import Produto from "./produto.js";
+import Produto from "./Produto.js";
 
 class ProdutoHigiene extends Produto {
 

@@ -1,6 +1,6 @@
 import scanner from 'readline-sync';
-import Produto from '../classes/produto.js';
-import Cliente from '../classes/cliente.js';
+import Produto from '../classes/Produto.js';
+import Cliente from '../classes/Cliente.js';
 
 function retornarProdutos() {
     const produtos = [];

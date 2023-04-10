@@ -2,12 +2,12 @@
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 import Compra from "./classes/compra.js";
-import gerenciador from "./util/gerenciador.js";
+import Gerenciador from "./util/Gerenciador.js";
 
-let produtos = gerenciador.retornarProdutos();
+let produtos = Gerenciador.retornarProdutos();
 console.log(produtos);
 
-let clientes = gerenciador.retornarClientes();
+let clientes = Gerenciador.retornarClientes();
 console.log(clientes);
 
 const compra = new Compra(produtos[2], clientes[2], 5);

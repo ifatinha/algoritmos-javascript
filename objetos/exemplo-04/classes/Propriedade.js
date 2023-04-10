@@ -1,4 +1,4 @@
-class Property {
+class Propriedade {
 
     constructor(proprietario, quadra, lote, area, valorVenda) {
         this.proprietario = proprietario;
@@ -22,4 +22,4 @@ class Property {
     calculcarIPTU() { }
 }
 
-export default Property;
+export default Propriedade;

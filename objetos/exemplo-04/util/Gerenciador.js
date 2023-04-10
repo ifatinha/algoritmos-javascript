@@ -1,7 +1,7 @@
 import scanner from 'readline-sync';
 
-import House from '../classes/house.js';
-import Ground from '../classes/ground.js';
+import Casa from '../classes/Casa.js';
+import Terreno from '../classes/Terreno.js';
 
 function menuPrincipal() {
     return scanner.questionInt("1 - Cadastrar novo imóvel\n" +
@@ -30,11 +30,11 @@ function cadastrarImovel() {
 
     if (tipoImovel === 2) {
         const areaConstruida = scanner.questionFloat("Área construida: ");
-        const house = new House(areaConstruida, proprietario, quadra, lote, area, valorVenda);
+        const house = new Casa(areaConstruida, proprietario, quadra, lote, area, valorVenda);
         console.log(house);
         return house;
     } else {
-        const ground = new Ground(proprietario, quadra, lote, area, valorVenda);
+        const ground = new Terreno(proprietario, quadra, lote, area, valorVenda);
         return ground;
     }
 }

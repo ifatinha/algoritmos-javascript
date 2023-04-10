@@ -1,6 +1,6 @@
-import Property from "./property.js";
+import Propriedade from "./Propriedade.js";
 
-class House extends Property {
+class Casa extends Propriedade {
     
     constructor(areaConstruida, proprietario, quadra, lote, area, valorVenda) {
         super(proprietario, quadra, lote, area, valorVenda);
@@ -13,4 +13,4 @@ class House extends Property {
     
 }
 
-export default House;
+export default Casa;

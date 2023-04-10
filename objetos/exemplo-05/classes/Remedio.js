@@ -1,6 +1,6 @@
-import Produto from "./produto.js";
+import Produto from "./Produto.js";
 
-class Medicamento extends Produto {
+class Remedio extends Produto {
 
     constructor(codigo, descricao, precoCompra, percentualLucro, validade) {
         super(codigo, descricao, precoCompra);
@@ -23,4 +23,4 @@ class Medicamento extends Produto {
     }
 }
 
-export default Medicamento;
+export default Remedio;

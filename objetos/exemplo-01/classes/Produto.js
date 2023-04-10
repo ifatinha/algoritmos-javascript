@@ -1,4 +1,4 @@
-class Product {
+class Produto {
 
     #description;
     #type;
@@ -54,4 +54,4 @@ class Product {
     }
 }
 
-export default Product
+export default Produto

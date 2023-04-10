@@ -1,4 +1,4 @@
-class Type {
+class Tipo {
 
     #code;
     #percentual;
@@ -23,4 +23,4 @@ class Type {
     }
 }
 
-export default Type
+export default Tipo

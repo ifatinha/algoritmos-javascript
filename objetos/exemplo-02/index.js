@@ -1,7 +1,7 @@
 /** Capitulo 12 - objetos: Exemplo 02
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import functions from "./util/functions.js";
+import functions from "./util/Gerenciador.js";
 
 const types = functions.fillTheType();
 const products = [];

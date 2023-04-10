@@ -1,6 +1,6 @@
 import scanner from 'readline-sync';
-import Medicamento from '../classes/medicamento.js';
-import ProdutoHigiene from '../classes/produtoHigiene.js';
+import Remedio from '../classes/Remedio.js';
+import ProdutoHigiene from '../classes/ProdutoHigienico.js';
 
 function menuPrincipal() {
     return scanner.questionInt("Bem-vindo! Escolha uma das opções abaixo\n" +
@@ -26,7 +26,7 @@ function criarProduto(tipoProtudo) {
     if (tipoProtudo === 1) {
         let percentualLucro = scanner.questionFloat("Digite o percentual de lucro: ");
         let dataValidade = scanner.question("Data de validade: ");
-        const medicamento = new Medicamento(codigo, descricao, precoCompra, percentualLucro, dataValidade);
+        const medicamento = new Remedio(codigo, descricao, precoCompra, percentualLucro, dataValidade);
         return medicamento;
     } else {
         const produtoHigiene = new ProdutoHigiene(codigo, descricao, precoCompra);
@@ -80,7 +80,7 @@ function alterarProduto(produtos, codigo) {
         produtos[index].descricao = scanner.question("Descrição: ");
         produtos[index].precoCompra = scanner.questionFloat("Novo Preço: ");
 
-        if (produtos[index] instanceof Medicamento) {
+        if (produtos[index] instanceof Remedio) {
             produtos[index].validade = scanner.question("Validade: ");
             produtos[index].percentualLucro = scanner.questionFloat("Percentual de lucro: ");
         }

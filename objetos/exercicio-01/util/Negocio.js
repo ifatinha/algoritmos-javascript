@@ -1,5 +1,5 @@
 import scanner from 'readline-sync';
-import Carro from '../classes/carro.js';
+import Carro from '../classes/Carro.js';
 
 function menu() {
     return scanner.questionInt("Menu de opções \n" +

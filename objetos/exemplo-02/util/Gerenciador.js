@@ -1,11 +1,11 @@
-import Type from '../classes/type.js'
-import Product from '../classes/product.js'
+import Tipo from '../classes/Tipo.js'
+import Produto from '../classes/Produto.js'
 import scanner from 'readline-sync';
 
-export function fillTheType() {
+function fillTheType() {
     const types = [];
-    const type1 = new Type();
-    const type2 = new Type();
+    const type1 = new Tipo();
+    const type2 = new Tipo();
 
     type1._code = 1;
     type1._percentual = 10;
@@ -18,15 +18,33 @@ export function fillTheType() {
     return types;
 }
 
-export function registerProduct(types) {
-    const product = new Product();
+function registerProduct(types) {
+    const product = new Produto();
     product._description = scanner.question("Digite a descrição do produto: ");
     product._price = scanner.questionFloat("Digite o preço do produto: ");
     let typeCode = scanner.questionInt("Digite o tipo do produto: (1 - Limpeza / 2 - Alimentação): ");
-    
+
     while (typeCode !== types[0]._code && typeCode !== types[1]._code) {
         typeCode = scanner.questionInt("Código inválida! Digite o tipo do produto novamente: (1 - Limpeza / 2 - Alimentação): ");
     }
     product._type = types[typeCode - 1];
     return product;
 }
+
+function averagePrice(products) {
+    let result = products.reduce(function (total, product) {
+        return total + product.calculateFinalPrice();
+    }, 0);
+    
+    return result / products.length;
+}
+
+function quantityOfProducts(products) {
+    const temp = products.filter(function (product) {
+        return product.calculateFinalPrice() > 40;
+    })
+
+    return temp;
+}
+
+export default { fillTheType, registerProduct, averagePrice, quantityOfProducts };

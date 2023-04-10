@@ -1,4 +1,4 @@
-class Employee {
+class Funcionario {
     constructor(office, sex, quantityHoursWorked) {
         this.office = office;
         this.sex = sex;
@@ -27,4 +27,4 @@ class Employee {
     }
 }
 
-export default Employee;
+export default Funcionario;

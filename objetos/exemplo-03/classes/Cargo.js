@@ -1,8 +1,8 @@
-class Office {
+class Cargo {
     constructor(code, hourlyRate) {
         this.code = code;
         this.hourlyRate = hourlyRate;
     }
 }
 
-export default Office;
+export default Cargo;
