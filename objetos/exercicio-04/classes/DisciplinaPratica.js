@@ -1,4 +1,4 @@
-import Disciplina from "./disciplina";
+import Disciplina from "./Disciplina.js";
 
 class DisciplinaPratica extends Disciplina {
 
@@ -8,10 +8,8 @@ class DisciplinaPratica extends Disciplina {
     }
 
     toString() {
-        console.log("Codigo: " + this.codigo);
-        console.log("Nome: " + this.nome);
-        console.log("Carga Horaria Geral: " + this.cagaHorariaGeral);
-        console.log("Carga Horaria Prática: " + this.cargaHorariaPratica);
+        console.log(this.codigo + ". " + this.nome + " (" +
+            this.cagaHorariaGeral + " + " + this.cargaHorariaPratica + ").");
     }
 
 }

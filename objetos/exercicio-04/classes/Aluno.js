@@ -6,8 +6,7 @@ class Aluno {
     }
 
     toString() {
-        console.log("Codigo: " + this.codigo);
-        console.log("Nome: " + this.nome);
+        console.log(this.codigo + ". " + this.nome);
     }
 }
 
