@@ -49,4 +49,71 @@ function matricularAluno(alunos, disciplinas, matriculas) {
     return matriculas;
 }
 
-export default { matricularAluno }
+function buscarMatricula(matriculas) {
+    console.log("Informe os dados de matricula");
+    let codAluno = scanner.question("Digite o codigo do aluno: ");
+    let codDisciplina = scanner.question("Digite o codigo da disciplina: ");
+    let anoLetivo = scanner.questionInt("Digite o ano letivo: ");
+    let serie = scanner.question("Digite a seria: ");
+
+    return matriculas.findIndex(function (matricula) {
+        return ((matricula.aluno.codigo === codAluno) && (matricula.disciplina.codigo === codDisciplina) &&
+            (matricula.anoLetivo === anoLetivo) && (matricula.serie === serie));
+    })
+}
+
+function inserirNotas() {
+    console.log("Digite as notas do aluno");
+    const notas = [];
+    let nota = 0.0;
+
+    for (let i = 0; i < 5; i++) {
+        nota = scanner.questionFloat((i + 1) + "° nota: (0 - 10): ");
+
+        while (nota < 0 && nota > 10) {
+            nota = scanner.questionFloat("Nota inválida! Informe um numero entre 0 e 10: ");
+        }
+
+        notas.push(nota);
+    }
+
+    return notas;
+}
+
+function alterarMatricula(matriculas) {
+    const matricula = buscarMatricula(matriculas);
+
+    if (matricula !== -1) {
+        console.log("Matricula Encontrada");
+        matriculas[matricula].toString();
+        matriculas[matricula].notas = inserirNotas();
+        console.log("Notas inseridas com sucesso!");
+        matriculas[matricula].calcularMedia();
+    } else {
+        console.log("Matricula não encontrada!");
+    }
+
+    return matriculas;
+}
+
+function visualizarBoletim(matriculas) {
+    let alunoCod = scanner.question("Digite o codigo do aluno: ");
+    let anoLetivo = scanner.questionInt("Digite o ano letivo: ");
+
+    let botetim = matriculas.filter(function (matricula) {
+        return ((matricula.aluno.codigo === alunoCod) &&
+            (matricula.anoLetivo === anoLetivo));
+    });
+
+    if (botetim.length > 0) {
+
+        botetim.forEach(function (mat) {
+            mat.toString();
+        });
+
+    } else {
+        console.log("Matricula não encontrada!");
+    }
+}
+
+export default { matricularAluno, alterarMatricula, visualizarBoletim }

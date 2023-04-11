@@ -5,7 +5,8 @@ class Matricula {
         this.serie = serie;
         this.aluno = aluno;
         this.disciplina = disciplina;
-        this.notas = [0, 0, 0, 0, 0];
+        this.notas = [];
+        this.media = 0;
     }
 
     toString() {
@@ -17,9 +18,18 @@ class Matricula {
         this.disciplina.toString();
         console.log("Notas");
         this.notas.forEach(function (nota) {
-            console.log(contador + "º nota ---> " + nota);
+            console.log(contador + "º Bim. ---> " + nota);
             contador++;
         });
+        console.log("Média: " + this.media);
+    }
+
+    calcularMedia() {
+        let totalNotas = this.notas.reduce(function (total, nota) {
+            return total + nota;
+        }, 0);
+
+        this.media = totalNotas / this.notas.length;
     }
 }
 

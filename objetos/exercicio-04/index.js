@@ -39,6 +39,16 @@ do {
             });
             break;
 
+        case 4:
+            console.clear();
+            matriculas = gerenciadorMatricula.alterarMatricula(matriculas);
+            break;
+
+        case 5:
+            console.clear();
+            gerenciadorMatricula.visualizarBoletim(matriculas);
+            break;
+
         case 6:
             console.log("Encerrando aplicação!");
             break;

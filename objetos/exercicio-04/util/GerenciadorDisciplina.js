@@ -18,6 +18,12 @@ function buscarDisciplina(disciplinas, codigo) {
 function criarDisciplina() {
     console.log("Cadastrar nova disciplina");
     let opcao = menuDisciplinas();
+
+    while (opcao !== 1 && opcao !== 2) {
+        console.log("Opção inválida! Tente novamento.");
+        opcao = menuDisciplinas();
+    }
+
     let codigo = scanner.question("Codigo: ");
     let nome = scanner.question("Disciplina: ");
     let cargaHoraria = scanner.question("Carga Horário: ");
@@ -45,4 +51,4 @@ function cadastrarDisciplina(disciplinas) {
     return disciplinas;
 }
 
-export default {buscarDisciplina, cadastrarDisciplina };
+export default { buscarDisciplina, cadastrarDisciplina };
