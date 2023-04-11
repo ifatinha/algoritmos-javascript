@@ -1,6 +1,8 @@
+import gerenciadorFuncionario from "./util/gerenciadorFuncionario.js";
 import menuPrincipal from "./util/menuPrincipal.js";
 
 let opcao;
+let funcionarios = [];
 
 do {
     opcao = menuPrincipal.menu();
@@ -8,22 +10,32 @@ do {
     switch (opcao) {
 
         case 1:
-            console.log("Cadastrar funcionario\n");
+            console.clear();
+            console.log("\nInforme os dados abaixo para cadastrar um funcionário\n");
+            funcionarios = gerenciadorFuncionario.cadastrarFuncionario(funcionarios);
             break;
 
         case 2:
-            console.log("Mostrar bônus mensal dos funcionários\n");
+            console.clear();
+            console.log("Funcionários cadstrados");
+            gerenciadorFuncionario.listaFuncionarios(funcionarios);
             break;
 
         case 3:
-            console.log("Excluir funcionário\n");
+            console.log("Bônus Mensal dos Funcionários\n");
+            gerenciadorFuncionario.mostrarBonusFuncionarios(funcionarios);
             break;
 
         case 4:
-            console.log("Alterar salário do funcionário\n");
+            console.log("Excluir funcionário\n");
+            splice();
             break;
 
         case 5:
+            console.log("Alterar salário do funcionário\n");
+            break;
+
+        case 6:
             console.log("Encerrando aplicação!");
             break;
 
@@ -32,4 +44,4 @@ do {
             break;
     }
 
-} while (opcao !== 5);
+} while (opcao !== 6);

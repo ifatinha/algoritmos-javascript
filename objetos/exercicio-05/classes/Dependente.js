@@ -6,8 +6,7 @@ class Dependente {
     }
 
     toString() {
-        console.log("Dependente: " + this.nome);
-        this.funcionario.toString();
+        console.log(this.nome);
     }
 }
 
