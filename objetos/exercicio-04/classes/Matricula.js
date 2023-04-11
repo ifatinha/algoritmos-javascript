@@ -1,3 +1,5 @@
+import DisciplinaPratica from "./DisciplinaPratica.js";
+
 class Matricula {
 
     constructor(serie, aluno, disciplina) {
@@ -5,7 +7,7 @@ class Matricula {
         this.serie = serie;
         this.aluno = aluno;
         this.disciplina = disciplina;
-        this.notas = [];
+        this.notas = [0, 0, 0, 0, 0];
         this.media = 0;
     }
 
@@ -21,15 +23,31 @@ class Matricula {
             console.log(contador + "º Bim. ---> " + nota);
             contador++;
         });
-        console.log("Média: " + this.media);
+        console.log("Média: " + this.media.toFixed(2));
     }
 
     calcularMedia() {
-        let totalNotas = this.notas.reduce(function (total, nota) {
-            return total + nota;
-        }, 0);
+        let totalNotas = 0;
 
-        this.media = totalNotas / this.notas.length;
+        if (this.disciplina instanceof DisciplinaPratica) {
+            for (let i = 0; i < 5; i++) {
+                if ((i + 1) % 2 === 0) {
+                    totalNotas += this.notas[i] * 2;
+                } else {
+                    totalNotas += this.notas[i] * 1;
+                }
+            }
+
+            this.media = totalNotas / 7;
+
+        } else {
+            console.log("Disciplina Normal");
+            totalNotas = this.notas.reduce(function (total, nota) {
+                return total + nota;
+            }, 0);
+
+            this.media = totalNotas / this.notas.length;
+        }
     }
 }
 
