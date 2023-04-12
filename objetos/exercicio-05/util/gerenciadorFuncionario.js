@@ -44,17 +44,76 @@ function cadastrarFuncionario(funcionarios) {
 }
 
 function listaFuncionarios(funcionarios) {
-    funcionarios.forEach(function (funcionario) {
-        funcionario.toString() + "\n"
-    });
+    if (funcionarios.length > 0) {
+        console.log("Funcionários cadastrados");
+        funcionarios.forEach(function (funcionario) {
+            funcionario.toString();
+        });
+    }else{
+        console.log("Nenhum funcionário cadastrado!");
+    }
 }
 
 function mostrarBonusFuncionarios(funcionarios) {
-    funcionarios.forEach(function (funcionario) {
-        console.log(funcionario.matricula + ". " + funcionario.nome +
-            "(" + funcionario.dependentes.length + " dependente(s))\n" +
-            "Bônus: R$" + funcionario.bonus+"\n");
+    if (funcionarios.length > 0) {
+        console.log("Bônus Mensal dos Funcionários\n");
+        funcionarios.forEach(function (funcionario) {
+            console.log(funcionario.matricula + ". " + funcionario.nome +
+                "(" + funcionario.dependentes.length + " dependente(s))\n" +
+                "Bônus: R$" + funcionario.bonus + "\n");
+        })
+    } else {
+        console.log("Nenhum funcionario cadastrado!");
+    }
+}
+
+function retonarIndexFuncionario(funcionarios, matricula) {
+    return funcionarios.findIndex(function (funcionario) {
+        return funcionario.matricula === matricula;
     })
 }
 
-export default { cadastrarFuncionario, listaFuncionarios, mostrarBonusFuncionarios };
+function removerFuncionario(funcionarios) {
+    let matricula = scanner.question("Digite a matricula do funcionario: ");
+    let index = retonarIndexFuncionario(funcionarios, matricula);
+
+    if (index !== -1) {
+        console.log("Deseja excluir os dados do funcionário: ");
+        funcionarios[index].toString();
+        let resposta = scanner.questionInt("1 - Sim / 2 - Não: ");
+
+        while (resposta !== 1 && resposta !== 2) {
+            resposta = scanner.questionInt("Opção inválida! (1 - Sim / 2 - Não): ");
+        }
+
+        if (resposta === 1) {
+            funcionarios.splice(index, 1);
+            console.log("Os dados do funcionário foram excluidos.");
+        } else {
+            console.log("Operação cancelada!");
+        }
+
+    } else {
+        console.log("Nenhum funcionário encontrado!");
+    }
+
+    return funcionarios;
+}
+
+function alterarFuncionario(funcionarios) {
+    let matricula = scanner.question("Digite a matricula do funcionário: ");
+    let index = retonarIndexFuncionario(funcionarios, matricula);
+
+    if (index !== -1) {
+        console.log("Dados do funcionário");
+        funcionarios[index].toString();
+        funcionarios[index].salario = scanner.questionFloat("Digite o novo salario: ");
+        console.log("Salario alterado com sucesso!");
+    } else {
+        console.log("Não foram encontrados dados do funcionário!");
+    }
+
+    return funcionarios;
+}
+
+export default { cadastrarFuncionario, listaFuncionarios, mostrarBonusFuncionarios, removerFuncionario, alterarFuncionario };

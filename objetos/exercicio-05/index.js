@@ -17,25 +17,28 @@ do {
 
         case 2:
             console.clear();
-            console.log("Funcionários cadstrados");
             gerenciadorFuncionario.listaFuncionarios(funcionarios);
             break;
 
         case 3:
-            console.log("Bônus Mensal dos Funcionários\n");
+            console.clear();
             gerenciadorFuncionario.mostrarBonusFuncionarios(funcionarios);
             break;
 
         case 4:
+            console.clear();
             console.log("Excluir funcionário\n");
-            splice();
+            funcionarios = gerenciadorFuncionario.removerFuncionario(funcionarios);
             break;
 
         case 5:
+            console.clear();
             console.log("Alterar salário do funcionário\n");
+            funcionarios = gerenciadorFuncionario.alterarFuncionario(funcionarios);
             break;
 
         case 6:
+            console.clear();
             console.log("Encerrando aplicação!");
             break;
 
