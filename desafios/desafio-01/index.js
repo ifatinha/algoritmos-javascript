@@ -1,17 +1,42 @@
 import scanner from 'readline-sync'
 
 let numero = scanner.questionInt("Digite o numero que voce quer converter para binario: ");
-let binario = "";
-let contador = 0;
 
-do {
+let stringBinaria = stringBinario(numero);
+let binario = reverseString(stringBinaria);
 
-    console.log(numero);
-    binario += numero % 2;
-    numero = numero / 2;
-    numero = numero.toPrecision(1);
+console.log(numero + " (dec) = " + binario + " (bin)");
 
-    contador++;
-} while (contador < 10);
+function stringBinario(numero) {
+    let stringBinaria = "";
 
-console.log(binario);
+    if (numero !== 1) {
+        let resto;
+
+        do {
+            resto = Math.trunc(numero % 2);
+            numero = Math.trunc(numero / 2);
+            stringBinaria += resto;
+
+            if (numero === 1) {
+                stringBinaria += numero;
+            }
+
+        } while (numero !== 1);
+    } else {
+        stringBinaria = "1";
+    }
+
+    return stringBinaria;
+
+}
+
+function reverseString(txt) {
+    let string = "";
+
+    for (let i = txt.length; i >= 0; i--) {
+        string += txt.charAt(i);
+    }
+
+    return string;
+}
