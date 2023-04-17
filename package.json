@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ifatinha/algoritmos-javascript#readme",
   "dependencies": {
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "utf8": "^3.0.0"
   }
 }

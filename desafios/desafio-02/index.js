@@ -1,6 +1,6 @@
 import scanner from 'readline-sync'
 
-let numero = scanner.questionInt("Digite um numero entre 0 e 1000: ");
+let numero = scanner.questionInt("Digite um numero entre 0 e 10000: ");
 
 while (numero < 0 || numero > 10000) {
     numero = scanner.questionInt("Opção inválida! Digite um numero entre 1 e 1000: ");
@@ -16,48 +16,83 @@ function numeroPorExtenso(numero) {
         "oitocentos", "novecentos"];
     const qualificacoes = ["cem", "mil"];
 
+    let numeroExtenso = "";
+
     let tamanhoNumero = numero.toString().length;
     let numeroString = numero.toString();
     let primeiroDigito = parseInt(numeroString.substr(0, 1));
-    let segundoDigito = parseInt(numeroString.substr(1, 2));
+    let segundoDigito = parseInt(numeroString.substr(1, 1));
 
     if (tamanhoNumero === 1 || (tamanhoNumero === 2 && numero < 20)) {
-        return unidade[numero];
+        numeroExtenso = unidade[numero];
     } else if (tamanhoNumero === 2) {
-
-        if (segundoDigito === 0) {
-            return dezena[primeiroDigito];
-        } else {
-            return dezena[primeiroDigito] + " e " + unidade[segundoDigito];
+        numeroExtenso = dezena[primeiroDigito];
+        if (segundoDigito !== 0) {
+            numeroExtenso += " e " + unidade[segundoDigito];
         }
     } else if (tamanhoNumero === 3) {
         let terceiroDigito = parseInt(numeroString.substr(2, 3));
         let segundaDezena = parseInt(numeroString.substr(1, 3));
 
         if (numero === 100) {
-            return qualificacoes[0];
+            numeroExtenso = qualificacoes[0];
         } else {
-            if (segundoDigito === 0 && terceiroDigito === 0) {
-                return centena[primeiroDigito];
-            } else if (segundoDigito === 0) {
-                return centena[primeiroDigito] + " e " + unidade[terceiroDigito];
+            numeroExtenso = centena[primeiroDigito];
+            if (segundoDigito === 0) {
+                numeroExtenso += " e " + unidade[terceiroDigito];
             } else if (segundaDezena >= 10 && segundaDezena < 20) {
-                return centena[primeiroDigito] + " e " + unidade[segundaDezena];
+                numeroExtenso += " e " + unidade[segundaDezena];
             } else {
-                return centena[primeiroDigito] + " e " + dezena[segundoDigito] + " e " + unidade[terceiroDigito];
+                numeroExtenso += " e " + dezena[segundoDigito];
+                if (terceiroDigito !== 0) {
+                    numeroExtenso += " e " + unidade[terceiroDigito];
+                }
             }
         }
     } else if (tamanhoNumero === 4) {
-        let terceiroDigito = parseInt(numeroString.substr(3, 3));
-        let quartoDigito = parseInt(numeroString.substr(3, 4));
-        let segundaDezena = parseInt(numeroString.substr(1, 3));
+        let terceiroDigito = parseInt(numeroString.substr(2, 1));
+        let quartoDigito = parseInt(numeroString.substr(numeroString.length - 1, 2));
+        let segundaDezena = parseInt(numeroString.substr(2, 3));
 
-        
         if (numero === 1000) {
-            return qualificacoes[1];
-        } else if (primeiroDigito === 1) {
-            return qualificacoes[primeiroDigito] + " " + centena[segundoDigito] + " e " +
-                dezena[terceiroDigito] + " e " + unidade[quartoDigito];
+            numeroExtenso = qualificacoes[1];
+        } else {
+
+            if (primeiroDigito === 1) {
+                numeroExtenso = unidade[1] + " ";
+            } else {
+                numeroExtenso = unidade[primeiroDigito] + " ";
+            }
+
+            if (segundoDigito === 0 && terceiroDigito === 0 && quartoDigito === 0) {
+                numeroExtenso += qualificacoes[1];
+            } else {
+                numeroExtenso += qualificacoes[1];
+                if (segundoDigito === 0) {
+                    if (segundaDezena < 10) {
+                        numeroExtenso += " e " + unidade[quartoDigito];
+                    } else if (segundaDezena >= 10 && segundaDezena < 20) {
+                        numeroExtenso += " e " + unidade[segundaDezena];
+                    } else {
+                        numeroExtenso += centena[segundoDigito] + " e "
+                            + dezena[terceiroDigito];
+                    }
+                } else {
+                    if (segundaDezena <= 10) {
+                        numeroExtenso += " e " + centena[segundoDigito] + " "
+                            + unidade[segundaDezena];
+                    } else {
+                        numeroExtenso += " " + centena[segundoDigito] + " e "
+                            + dezena[terceiroDigito];
+                    }
+
+                    if (quartoDigito !== 0) {
+                        numeroExtenso += " " + unidade[quartoDigito];
+                    }
+                }
+            }
         }
     }
+
+    return numeroExtenso;
 }
