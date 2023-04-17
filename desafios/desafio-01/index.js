@@ -1,3 +1,7 @@
+/** Capitulo 13 - Desafios: Desafio 04
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
+
 import scanner from 'readline-sync'
 
 let numero = scanner.questionInt("Digite o numero que voce quer converter para binario: ");

@@ -1,3 +1,6 @@
+/** Capitulo 13 - Desafios: Desafio 06
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
 import scanner from 'readline-sync'
 
 let numero = scanner.questionInt("Digite um numero entre 0 e 10000: ");
