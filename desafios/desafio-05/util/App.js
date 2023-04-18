@@ -38,22 +38,58 @@ function relatorioSalarios(funcionarios) {
     const salariosAcima = filtrarSalariosAcima(funcionarios, salarioBase);
     const salariosAbaixo = filtarSalariosAbaixo(funcionarios, salarioBase);
 
+    console.log("Funcionarios com salarios acima de R$" + salarioBase.toFixed(2));
     if (salariosAcima.length > 0) {
-        console.log("Funcionarios com salarios acima de R$" + salarioBase.toFixed(2));
         gerenciadorFunc.listarFuncionarios(salariosAcima);
     } else {
         console.log("Nenhum funcionario encontrado!");
     }
 
-    if (salariosAcima.length > 0) {
-        console.log("\nFuncionarios com salarios abaixo de R$" + salarioBase.toFixed(2));
+    console.log("\nFuncionarios com salarios abaixo de R$" + salarioBase.toFixed(2));
+    if (salariosAbaixo.length > 0) {
         gerenciadorFunc.listarFuncionarios(salariosAbaixo);
     } else {
         console.log("\nNenhum funcionario encontrado!");
     }
 }
 
+function encontrarMenorSalario(funcionarios) {
+    return funcionarios.reduce((prev, curr) => {
+        return prev.salario < curr.salario ? prev : curr;
+    })
+}
+
+function funcionariosMenoresSalarios(funcionarios) {
+    const menorSalario = encontrarMenorSalario(funcionarios);
+
+    const menoresSalarios = funcionarios.filter((func) => {
+        return func.salario <= menorSalario.salario;
+    });
+
+    if (menoresSalarios.length > 0) {
+        console.log(menoresSalarios.length + " funcionarios possuem salarios iguais ou inferiores a R$" + menorSalario.salario.toFixed(2));
+        gerenciadorFunc.listarFuncionarios(menoresSalarios);
+    } else {
+        console.log("Nenhum funcionario encontrado!");
+    }
+
+}
+
+function verificarImpostos(funcionarios) {
+    const funcionariosImpostos = funcionarios.filter((func) => {
+        return ((func.tempoServico >= 1 && func.tempoServico <= 5) &&
+            (func.salario <= 2000));
+    });
+
+    if (funcionariosImpostos.length > 0) {
+        console.log(funcionariosImpostos.length + " funcionarios com impostos à pagar");
+        gerenciadorFunc.listarFuncionarios(funcionariosImpostos);
+    } else {
+        console.log("Nenhum funcionario com imposto à pagar.");
+    }
+}
+
 export default {
     menu, cadastrarFuncionario, funcionariosCadastrados,
-    relatorioSalarios
+    relatorioSalarios, funcionariosMenoresSalarios, verificarImpostos
 }
