@@ -1,42 +1,15 @@
-import scanner from 'readline-sync'
+import app from './util/App.js'
 
-function tabelaPrecos() {
-    console.log("Tabela de preços\n" +
-        "das 0h às 9h — 50% de desconto no valor do minuto.\n" +
-        "das 9h01 às 18h — 0% de desconto no valor do minuto.\n" +
-        "das 18h01 às 21h — 30% de desconto no valor do minuto.\n" +
-        "das 21h01 às 23h59 — 40% de desconto no valor do minuto.");
-}
+const precoMinuto = 1.99;
 
-function calculcarMinutos(dataInicio, dataFim) {
-    let diferenca = dataFim.getTime() - dataInicio.getTime();
-    let minutos = Math.trunc((diferenca / 60000));
-    return minutos;
-}
+const dataInicio = app.lerHorario("Digite a hora de inicio da chamada: ");
+const dataFinal = app.lerHorario("Digite a hora de termino da chamada: ");
 
-function verificarDesconto(dataInicial, dataFinal) {
-    let desconto = 0;
-}
+let minutosGastos = app.calculcarMinutos(dataInicio, dataFinal);
+console.log("Duração da chamada: " + minutosGastos + "min");
 
-function lerDados() {
-    let horaInicial = scanner.questionInt("Digite a hora inicial da chamada: ");
-    let minutoInicial = scanner.questionInt("Digite o minuto inicial da chamada: ");
-    let dataInicial = new Date();
-    dataInicial.setHours(horaInicial);
-    dataInicial.setMinutes(minutoInicial);
+let totalPagar = app.calcularTotalPagar(minutosGastos, precoMinuto);
+console.log("Total a pagar: R$" + totalPagar.toFixed(2));
 
-    let horaFinal = scanner.questionInt("Digite a hora Final da chamada: ");
-    let minutoFinal = scanner.questionInt("Digite o minuto Final da chamada: ");
-    let dataFinal = new Date();
-    dataFinal.setHours(horaFinal);
-    dataFinal.setMinutes(minutoFinal);
-
-    let minutos = calculcarMinutos(dataInicial, dataFinal);
-
-    console.log("Duração da chamada: " + minutos + " minutos.");
-
-    console.log(dataInicial.toLocaleTimeString());
-    console.log(dataFinal.toLocaleTimeString());
-}
-
-lerDados();
+app.calcularDesconto(dataInicio, dataFinal);
+app.tabelaPrecos();
