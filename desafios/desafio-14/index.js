@@ -1,3 +1,6 @@
+/** Capitulo 13 - Desafios: Desafio 19
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
 import App from "./util/App.js";
 
 let pacientes = [];

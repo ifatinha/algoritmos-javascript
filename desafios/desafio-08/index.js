@@ -1,3 +1,6 @@
+/** Capitulo 13 - Desafios: Desafio 12
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
 import app from './util/App.js';
 
 let funcionarios = [];

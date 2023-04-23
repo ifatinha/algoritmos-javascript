@@ -1,3 +1,6 @@
+/** Capitulo 13 - Desafios: Desafio 04
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
 import App from "./util/App.js";
 
 let funcionarios = [];
@@ -10,9 +13,6 @@ do {
     switch (opcao) {
         case 1:
             console.clear();
-            // for (let i = 0; i < 100; i++) {
-            //     funcionarios = App.cadastrarFuncionario(funcionarios);
-            // }
             funcionarios = App.cadastrarFuncionario(funcionarios);
             break;
 

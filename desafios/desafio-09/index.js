@@ -1,3 +1,6 @@
+/** Capitulo 13 - Desafios: Desafio 13
+ *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+
 import scanner from 'readline-sync'
 
 let numero = scanner.questionInt("Digite um numero para verificar se ele e um Numero Narcisista: ");
