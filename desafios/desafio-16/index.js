@@ -4,10 +4,6 @@
 import App from "./util/App.js";
 
 let opcao;
-let produtos = [];
-let clientes = [];
-let vendas = [];
-let itemVendas = [];
 
 do {
     opcao = App.menu();
@@ -15,11 +11,12 @@ do {
     switch (opcao) {
         case 1:
             console.clear();
-            produtos = App.manutencaoProduto(produtos);
+            App.manutencaoProduto();
             break;
 
         case 2:
             console.clear();
+            App.manutencaoClientes();
             break;
 
         case 3:

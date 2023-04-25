@@ -26,7 +26,7 @@ function cadastrarProduto(produtos) {
                 qtdEstoque = scanner.questionInt("Quantidade do estoque: ");
             }
 
-            let valorUnitario = 3.75//scanner.questionFloat("Preço unitário: ");
+            let valorUnitario = 5.75//scanner.questionFloat("Preço unitário: ");
             while (valorUnitario <= 0) {
                 valorUnitario = scanner.questionFloat("Preço não pode ser menor que 0! Digite novamente: ");
             }
@@ -70,12 +70,14 @@ function atualizarEstoque(produtos) {
         let qtd = scanner.questionInt("Digite a quantidade que você quer retirar do estoque: ");
 
         while (qtd > produtos[index].qtdEstoque) {
-            qtd = scanner.questionInt("Quantidade insuficiente.\nValor atual do estoque: " + produtos[index].qtdEstoque + ".\n" +
+            qtd = scanner.questionInt("Quantidade insuficiente.\nValor atual do estoque: " +
+                produtos[index].qtdEstoque + ".\n" +
                 "Digite novamente: ");
         }
 
         produtos[index].qtdEstoque -= qtd;
-        console.log("Produto atualizado! A nova quantidade do estoque é " + produtos[index].qtdEstoque);
+        console.log("Produto atualizado! A nova quantidade do estoque é " +
+            produtos[index].qtdEstoque);
 
     } else {
         console.log("Nenhum produto encontrado. Tente novamente.");
@@ -84,4 +86,28 @@ function atualizarEstoque(produtos) {
     return produtos;
 }
 
-export default { cadastrarProduto, listarProdutos, atualizarEstoque }
+function listarProdutosEstoqueBaixo(produtos) {
+    const arr = produtos.filter((produto) => {
+        return produto.qtdEstoque < produto.qtdMinima;
+    });
+
+    if (arr.length > 0) {
+        console.log("Produtos com estoque abaixo do minimo");
+        listarProdutos(arr);
+    } else {
+        console.log("Nenhum produto está com o estoque abaixo do minimo.");
+    }
+
+}
+
+function balancoEstoque(produtos) {
+    return produtos.reduce((total, produto) => {
+        return total + (produto.valorUnitario * produto.qtdEstoque);
+    }, 0);
+}
+
+export default {
+    cadastrarProduto, listarProdutos,
+    atualizarEstoque, listarProdutosEstoqueBaixo,
+    balancoEstoque
+}

@@ -2,6 +2,8 @@ import scanner from 'readline-sync';
 import ListaProdutos from '../data/ListaProdutos.js';
 import Produto from '../classes/Produto.js';
 
+let produtos = [];
+
 function menu() {
     return scanner.questionInt("Manutenção de Produtos\n" +
         "1 - Cadastrar Produto\n" +
@@ -26,13 +28,13 @@ function criarProduto() {
     return new Produto(codigo, descricao, valorCompra, valorVenda, qtdMinimo, qtdEstoque);
 }
 
-function buscarProdutoCodigo(produtos, codigo) {
+function buscarProdutoCodigo(codigo) {
     return produtos.some((produto) => {
         return produto.codigo === codigo;
     })
 }
 
-function cadastrarProduto(produtos) {
+function cadastrarProduto() {
     const produto = criarProduto();
     produto.calcularLucro();
     let jaExiste = buscarProdutoCodigo(produtos, produto.codigo);
@@ -44,11 +46,9 @@ function cadastrarProduto(produtos) {
     } else {
         console.log("Erro! Já existe um produto cadastrado com o codigo informado.");
     }
-
-    return produtos;
 }
 
-function listarProdutos(produtos) {
+function listarProdutos() {
     if (produtos.length > 0) {
         console.log("Produtos cadastrados\n");
         produtos.forEach((produto) => {
@@ -59,39 +59,60 @@ function listarProdutos(produtos) {
     }
 }
 
-function buscarProduto(produtos, codigo) {
+function pesquisarDadosProduto() {
+    let codigo = scanner.question("Digite o codigo do produto: ");
+    let index = retornarIndexProduto(codigo);
+
+    if (index !== -1) {
+        console.log("Detalhes do produto\n" +
+            produtos[index].toString());
+    } else {
+        console.log("Nenhum produto encontrado!");
+    }
+}
+
+function retornarIndexProduto(codigo) {
     return produtos.findIndex((produto) => {
         return produto.codigo === codigo;
     })
 }
 
-function pesquisarDadosProtudos(produtos) {
+function alterarProduto() {
     let codigo = scanner.question("Digite o codigo do produto: ");
-    let index = buscarProduto(produtos, codigo);
+    let index = retornarIndexProduto(codigo);
 
     if (index !== -1) {
         console.log("Detalhes do produto\n" +
+            produtos[index].toString());
+
+        produtos[index].descricao = scanner.question("Descrição: ");
+        produtos[index].estoqueMinimo = scanner.questionInt("Estoque minimo: ");
+        produtos[index].estoqueAtual = scanner.questionInt("Estoque atual: ");
+        produtos[index].valorCompra = scanner.questionFloat("Valor de compra: ");
+        produtos[index].valorVenda = scanner.questionFloat("Valor de venda: ");
+        produtos[index].calcularLucro();
+
+        console.log("\nDados do produto atualizado\n" +
             produtos[index].toString());
     } else {
         console.log("Nenhum produto encontrado!");
     }
 }
 
-function alterarProduto(produtos) {
-    let codigo = scanner.question("Digite o codigo do produto: ");
-    let index = buscarProduto(produtos, codigo);
+function removerProduto() {
+    let codigo = scanner.question("Digite o codigo do produto que você quer remover: ");
+    let index = retornarIndexProduto(codigo);
 
     if (index !== -1) {
-        console.log("Detalhes do produto\n" +
+        console.log("O produto abaixo foi removido do estoque\n" +
             produtos[index].toString());
-
-        
+        produtos.splice(index, 1);
     } else {
         console.log("Nenhum produto encontrado!");
     }
 }
 
-function gerenciarProduto(produtos) {
+function gerenciarProduto() {
     let opcao;
 
     do {
@@ -101,18 +122,22 @@ function gerenciarProduto(produtos) {
             case 1:
                 console.clear();
                 console.log("Sistema de cadastro de produtos\n");
-                produtos = cadastrarProduto(produtos);
+                cadastrarProduto(produtos);
                 break;
 
             case 2:
                 console.clear();
-                pesquisarDadosProtudos(produtos);
+                pesquisarDadosProduto(produtos);
                 break;
 
             case 3:
+                console.clear();
+                alterarProduto(produtos);
                 break;
 
             case 4:
+                console.clear();
+                removerProduto(produtos);
                 break;
 
             case 5:
@@ -129,10 +154,8 @@ function gerenciarProduto(produtos) {
                 break;
         }
     } while (opcao !== 6)
-
-    return produtos;
 }
 
 export default {
-    gerenciarProduto
+    gerenciarProduto, produtos
 }

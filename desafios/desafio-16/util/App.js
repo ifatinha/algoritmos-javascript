@@ -1,5 +1,6 @@
 import scanner from 'readline-sync'
 import AppProduto from './AppProduto.js';
+import AppCliente from './AppCliente.js';
 
 function menu() {
     return scanner.questionInt("Bem-vindo! Digite umas das opções abaixo\n" +
@@ -10,12 +11,12 @@ function menu() {
         "5 - Sair: ")
 }
 
-function manutencaoProduto(produtos) {
-    return AppProduto.gerenciarProduto(produtos);
+function manutencaoProduto() {
+    AppProduto.gerenciarProduto();
 }
 
-function manutencaoClientes(clientes) {
-
+function manutencaoClientes() {
+    AppCliente.gerenciarCliente();
 }
 
 function manutencaoVendas(vendas) {

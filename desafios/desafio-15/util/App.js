@@ -23,4 +23,16 @@ function atualizarEstoque(produtos) {
     return AppProduto.atualizarEstoque(produtos);
 }
 
-export default { menu, cadastrarPoduto, produtosCadastrados, atualizarEstoque }
+function produtosComEstoqueBaixo(produtos) {
+    AppProduto.listarProdutosEstoqueBaixo(produtos);
+}
+
+function balancoEstoque(produtos) {
+    console.log("Valor total do estoque: R$" +
+        AppProduto.balancoEstoque(produtos).toFixed(2));
+}
+
+export default {
+    menu, cadastrarPoduto, produtosCadastrados,
+    atualizarEstoque, produtosComEstoqueBaixo, balancoEstoque
+}

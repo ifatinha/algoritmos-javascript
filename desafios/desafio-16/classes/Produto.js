@@ -24,6 +24,6 @@ export default class Produto {
     }
 
     calcularLucro() {
-        this.lucro = this.valorVenda - this.valorCompra;
+        this.lucro = (this.valorVenda - this.valorCompra);
     }
 }
