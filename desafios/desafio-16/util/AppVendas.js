@@ -27,8 +27,6 @@ function criarVenda() {
     const tipo = tipoVenda();
     let venda;
 
-    console.log("Tipo: " + tipo);
-
     if (tipo === "A Prazo") {
         venda = new Venda(codVenda, tipo);
     } else {
@@ -42,7 +40,8 @@ function criarVenda() {
 
 function gerenciarVenda() {
     const venda = criarVenda();
-    console.log(venda.toString());
+    console.log("Venda cadastrada\n" +
+        venda.toString());
     vendas.push(venda);
 }
 
