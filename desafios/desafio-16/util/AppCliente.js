@@ -152,5 +152,5 @@ function gerenciarCliente() {
 }
 
 export default {
-    gerenciarCliente, clientes
+    gerenciarCliente, clientes, retornarIndexCliente
 }

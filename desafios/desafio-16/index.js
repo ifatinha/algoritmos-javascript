@@ -21,6 +21,7 @@ do {
 
         case 3:
             console.clear();
+            App.manutencaoVendas();
             break;
 
         case 4:

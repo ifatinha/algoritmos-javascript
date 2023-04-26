@@ -1,17 +1,19 @@
+import GerarNumeroNF from "../util/GerarNumeroNF.js";
+
 export default class Venda {
 
-    constructor(codVenda, dataVenda, tipoVenda, cliente, dataVencimento) {
+    constructor(codVenda, tipoVenda) {
         this.codVenda = codVenda;
-        this.dataVenda = dataVenda;
+        this.notaFiscal = GerarNumeroNF.gerarNumeroNotaFiscal();
+        this.dataVenda = new Date();
         this.tipoVenda = tipoVenda;
-        this.cliente = cliente;
-        this.dataVencimento = dataVencimento;
     }
 
     toString() {
-        return (this.codVenda + ". " + this.dataVenda + " (" +
-            this.tipoVenda + ") \n" +
-            "Data de vencimento: " + this.dataVencimento + "\n" +
-            "Cliente: " + this.cliente.toString() + "\n");
+        return ("\nDetalhes da venda \n" +
+            "Número da venda: " + this.codVenda + "\n" +
+            "Nota fiscal: " + this.notaFiscal + "\n" +
+            "Data Venda: " + this.dataVenda.toLocaleDateString() + " (" +
+            this.tipoVenda + ") \n")
     }
 }
