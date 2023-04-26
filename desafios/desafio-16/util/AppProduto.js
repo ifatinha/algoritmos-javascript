@@ -157,5 +157,5 @@ function gerenciarProduto() {
 }
 
 export default {
-    gerenciarProduto, produtos
+    gerenciarProduto, produtos, retornarIndexProduto
 }

@@ -7,6 +7,7 @@ export default class Venda {
         this.notaFiscal = GerarNumeroNF.gerarNumeroNotaFiscal();
         this.dataVenda = new Date();
         this.tipoVenda = tipoVenda;
+        this.valorTotalVenda = 0;
     }
 
     toString() {

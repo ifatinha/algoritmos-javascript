@@ -20,10 +20,13 @@ export default class Produto {
     }
 
     detalhesProduto() {
-        return (this.codigo + ". " + this.descricao);
+        return (this.codigo + ". " + this.descricao +
+            " (R$" + this.valorVenda.toFixed(2) + ")");
     }
 
     calcularLucro() {
         this.lucro = (this.valorVenda - this.valorCompra);
     }
+
+
 }

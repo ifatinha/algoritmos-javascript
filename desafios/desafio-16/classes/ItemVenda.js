@@ -4,17 +4,17 @@ export default class ItemVenda {
         this.venda = venda;
         this.produto = produto;
         this.qtdProduto = qtdProduto;
-        this.valorVenda = 0;
+        this.valorTotalProduto = 0;
     }
 
     toString() {
         return ("Detalhes da venda\n" +
             this.venda.toString() + "\n" +
             this.produto.detalhesProduto() + "\n" +
-            "Quantidade vendida: " + this.qtdProduto)
+            "Quantidade: " + this.qtdProduto)
     }
 
-    getVendas() {
-        this.valorVenda = (this.qtdProduto * this.produto.valorVenda);
+    calcularTotalProdutos() {
+        this.valorTotalProduto = (this.qtdProduto * this.produto.valorVenda);
     }
 }

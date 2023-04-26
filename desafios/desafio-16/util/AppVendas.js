@@ -2,8 +2,10 @@ import scanner from 'readline-sync';
 import AppCliente from './AppCliente.js';
 import Venda from '../classes/Venda.js';
 import VendaAPrazo from '../classes/VendaAPrazo.js';
+import AppItemVenda from './AppItemVenda.js';
 
 let vendas = [];
+let itensVendas = [];
 
 function tipoVenda() {
     const tiposVenda = ["A Prazo", "À Vista"];
@@ -38,11 +40,18 @@ function criarVenda() {
     return venda;
 }
 
+function cadastrarProdutosVenda() {
+    const produto = AppItemVenda.buscarProduto();
+    console.log(produto.detalhesProduto());
+}
+
 function gerenciarVenda() {
     const venda = criarVenda();
     console.log("Venda cadastrada\n" +
         venda.toString());
     vendas.push(venda);
+
+    cadastrarProdutosVenda();
 }
 
 export default { gerenciarVenda };
