@@ -28,5 +28,8 @@ export default class Produto {
         this.lucro = (this.valorVenda - this.valorCompra);
     }
 
+    atualizarEstoque(qtd) {
+        this.estoqueAtual -= qtd;
+    }
 
 }

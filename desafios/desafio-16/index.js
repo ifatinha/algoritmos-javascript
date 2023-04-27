@@ -26,6 +26,7 @@ do {
 
         case 4:
             console.clear();
+            App.relatorios();
             break;
 
         case 5:

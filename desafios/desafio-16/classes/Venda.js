@@ -15,6 +15,11 @@ export default class Venda {
             "Número da venda: " + this.codVenda + "\n" +
             "Nota fiscal: " + this.notaFiscal + "\n" +
             "Data Venda: " + this.dataVenda.toLocaleDateString() + " (" +
-            this.tipoVenda + ") \n")
+            this.tipoVenda + ")\n" +
+            "Total Venda R$" + this.valorTotalVenda.toFixed(2));
+    }
+
+    calcularTotalVenda(totalProduto) {
+        this.valorTotalVenda += totalProduto;
     }
 }

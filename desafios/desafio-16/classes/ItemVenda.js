@@ -8,10 +8,9 @@ export default class ItemVenda {
     }
 
     toString() {
-        return ("Detalhes da venda\n" +
-            this.venda.toString() + "\n" +
-            this.produto.detalhesProduto() + "\n" +
-            "Quantidade: " + this.qtdProduto)
+        return (this.produto.detalhesProduto() + "\n" +
+            "Quantidade: " + this.qtdProduto + "\n" +
+            "Total R$" + this.valorTotalProduto.toFixed(2));
     }
 
     calcularTotalProdutos() {

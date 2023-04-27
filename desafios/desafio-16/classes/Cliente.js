@@ -10,6 +10,6 @@ export default class Cliente {
     toString() {
         return (this.cpf + " - " + this.nomeCompleto + "\n" +
             "Tel.: " + this.telefone + "\n" +
-            "(" + this.endereco + ")\n");
+            "(" + this.endereco + ")");
     }
 }

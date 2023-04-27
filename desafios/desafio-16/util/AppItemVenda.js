@@ -1,5 +1,6 @@
 import scanner from 'readline-sync'
 import AppProduto from './AppProduto.js';
+import AppVendas from './AppVendas.js';
 
 function buscarProduto() {
     let codProduto = scanner.question("Codigo do produto: ");
@@ -13,4 +14,26 @@ function buscarProduto() {
     return AppProduto.produtos[index];
 }
 
-export default { buscarProduto }
+function listarVendas() {
+    let itensVendas = AppVendas.itensVendas;
+    let listaVendas = AppVendas.vendas;
+
+    if (listaVendas.length > 0) {
+        listaVendas.forEach((venda) => {
+            console.log(venda.toString());
+
+            const produtos = itensVendas.filter((itemVenda) => {
+                return itemVenda.venda.codVenda === venda.codVenda;
+            })
+
+            console.log("\nProdutos\n");
+            produtos.forEach((produto) => {
+                console.log(produto.toString());
+            })
+        })
+    } else {
+        console.log("Nenhuma venda cadastrada.");
+    }
+}
+
+export default { buscarProduto, listarVendas }

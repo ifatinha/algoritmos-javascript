@@ -11,7 +11,7 @@ export default class VendaAPrazo extends Venda {
     toString() {
         return (super.toString() +
             "Data de Vencimento: " + this.dataVencimento.toLocaleString() + "\n" +
-            this.cliente.toString() + "\n");
+            this.cliente.toString());
     }
 
     calcularDataVencimento() {

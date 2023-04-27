@@ -3,6 +3,7 @@ import AppCliente from './AppCliente.js';
 import Venda from '../classes/Venda.js';
 import VendaAPrazo from '../classes/VendaAPrazo.js';
 import AppItemVenda from './AppItemVenda.js';
+import ItemVenda from '../classes/ItemVenda.js';
 
 let vendas = [];
 let itensVendas = [];
@@ -40,9 +41,40 @@ function criarVenda() {
     return venda;
 }
 
-function cadastrarProdutosVenda() {
-    const produto = AppItemVenda.buscarProduto();
-    console.log(produto.detalhesProduto());
+function cadastrarProdutosVenda(venda) {
+    let novoProduto;
+
+    do {
+        const produto = AppItemVenda.buscarProduto();
+
+        if (produto.estoqueAtual > 0) {
+            let qtdProduto = scanner.questionInt("Quantidade comprada: ");
+
+            while (qtdProduto > produto.estoqueAtual) {
+                qtdProduto = scanner.questionInt("Quantidade superior ao estoque. Digite outro valor: ");
+            }
+
+            produto.atualizarEstoque(qtdProduto);
+
+            const itemVenda = new ItemVenda(venda, produto, qtdProduto);
+            itemVenda.calcularTotalProdutos();
+
+            console.log("Produto adicionado\n" +
+                itemVenda.produto.detalhesProduto());
+
+            itensVendas.push(itemVenda);
+            venda.calcularTotalVenda(itemVenda.valorTotalProduto);
+            console.clear();
+        } else {
+            console.log("O produto informado não tem estoque.");
+        }
+
+        novoProduto = scanner.questionInt("Adicionar novo produto? (1 - sim/2 - não) ");
+        while (novoProduto !== 1 && novoProduto !== 2) {
+            novoProduto = scanner.questionInt("Opção inválida! Adicionar novo produto? (1 - sim/2 - não) ");
+        }
+
+    } while (novoProduto === 1)
 }
 
 function gerenciarVenda() {
@@ -51,7 +83,20 @@ function gerenciarVenda() {
         venda.toString());
     vendas.push(venda);
 
-    cadastrarProdutosVenda();
+    cadastrarProdutosVenda(venda);
+    console.clear();
+    console.log(itensVendas);
+    mostrarNotaFisca(venda);
 }
 
-export default { gerenciarVenda };
+function mostrarNotaFisca(venda) {
+    console.log(venda.toString() +
+        "Produtos");
+    itensVendas.forEach((item) => {
+        if (item.venda.codVenda === venda.codVenda) {
+            console.log(item.toString());
+        }
+    })
+}
+
+export default { gerenciarVenda, itensVendas, vendas };
