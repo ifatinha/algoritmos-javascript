@@ -15,7 +15,7 @@ function menu() {
         "3 - Alterar Cliente\n" +
         "4 - Excluir Cliente\n" +
         "5 - Clientes Cadastrados\n" +
-        "6 - Sair: ");
+        "6 - Voltar ao menu principal: ");
 }
 
 function criarCliente() {
@@ -112,36 +112,31 @@ function gerenciarCliente() {
 
     do {
         opcao = menu();
+        console.clear();
 
         switch (opcao) {
             case 1:
-                console.clear();
                 console.log("Sistema de cadastro de clientes\n");
                 cadastrarCliente();
                 break;
 
             case 2:
-                console.clear();
                 pesquisarCliente();
                 break;
 
             case 3:
-                console.clear();
                 alterarDadosCliente();
                 break;
 
             case 4:
-                console.clear();
                 removerCliente();
                 break;
 
             case 5:
-                console.clear();
                 listarClientes();
                 break;
 
             case 6:
-                console.log("Encerrando aplicação!");
                 break;
 
             default:

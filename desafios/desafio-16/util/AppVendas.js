@@ -93,7 +93,7 @@ function mostrarNotaFisca(venda) {
         "Produtos");
     itensVendas.forEach((item) => {
         if (item.venda.codVenda === venda.codVenda) {
-            console.log(item.toString());
+            console.log(item.toString()+"\n");
         }
     })
 }

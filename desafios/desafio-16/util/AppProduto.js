@@ -11,7 +11,7 @@ function menu() {
         "3 - Alterar Produto\n" +
         "4 - Excluir Produto\n" +
         "5 - Produtos Cadastrados\n" +
-        "6 - Sair: ");
+        "6 - Voltar ao menu principal: ");
 }
 
 function criarProduto() {
@@ -117,36 +117,31 @@ function gerenciarProduto() {
 
     do {
         opcao = menu();
+        console.clear();
 
         switch (opcao) {
             case 1:
-                console.clear();
                 console.log("Sistema de cadastro de produtos\n");
                 cadastrarProduto(produtos);
                 break;
 
             case 2:
-                console.clear();
                 pesquisarDadosProduto(produtos);
                 break;
 
             case 3:
-                console.clear();
                 alterarProduto(produtos);
                 break;
 
             case 4:
-                console.clear();
                 removerProduto(produtos);
                 break;
 
             case 5:
-                console.clear();
                 listarProdutos(produtos);
                 break;
 
             case 6:
-                console.log("Encerrando aplicação!");
                 break;
 
             default:

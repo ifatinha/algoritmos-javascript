@@ -9,7 +9,7 @@ function menu() {
         "1 - Todas as vendas\n" +
         "2 - Vendas por cliente\n" +
         "3 - Produtos com baixo estoque\n" +
-        "4 - Sair: ");
+        "4 - Voltar ao menu principal: ");
 }
 
 function listarTodasAsVendas() {
@@ -44,13 +44,22 @@ function vendasPorCliente() {
             }
         });
 
-        console.log(vendasCliente);
-        if(vendasCliente.length > 0){
-            
-        }else{
+        if (vendasCliente.length > 0) {
+            vendasCliente.forEach((venda) => {
+                console.log(venda.toString());
+
+                const itens = AppVendas.itensVendas.filter((item) => {
+                    return item.venda.codVenda === venda.codVenda;
+                })
+
+                itens.forEach((item) => {
+                    console.log(item.toString() + "\n");
+                })
+            })
+        } else {
             console.log("");
         }
-        
+
     } else {
         console.log("Nenhum cliente encontrado.");
     }
@@ -61,6 +70,7 @@ function gerenciarRelatorios() {
 
     do {
         opcao = menu();
+        console.clear();
 
         switch (opcao) {
             case 1:
@@ -77,7 +87,6 @@ function gerenciarRelatorios() {
 
             case 4:
                 console.clear();
-                console.log("Encerrando aplicação\n");
                 break;
 
             default:

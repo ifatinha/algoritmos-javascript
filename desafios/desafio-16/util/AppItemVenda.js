@@ -19,6 +19,7 @@ function listarVendas() {
     let listaVendas = AppVendas.vendas;
 
     if (listaVendas.length > 0) {
+        console.log("RELATORIO DE VENDAS");
         listaVendas.forEach((venda) => {
             console.log(venda.toString());
 
@@ -26,9 +27,9 @@ function listarVendas() {
                 return itemVenda.venda.codVenda === venda.codVenda;
             })
 
-            console.log("\nProdutos\n");
+            console.log("Produtos\n");
             produtos.forEach((produto) => {
-                console.log(produto.toString());
+                console.log(produto.toString()+"\n");
             })
         })
     } else {
