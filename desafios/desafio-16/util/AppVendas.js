@@ -85,7 +85,6 @@ function gerenciarVenda() {
 
     cadastrarProdutosVenda(venda);
     console.clear();
-    console.log(itensVendas);
     mostrarNotaFisca(venda);
 }
 

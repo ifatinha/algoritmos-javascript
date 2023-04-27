@@ -38,33 +38,19 @@ function vendasPorCliente() {
     let index = AppCliente.retornarIndexCliente(cpf);
 
     if (index !== -1) {
-        const vendasCliente = AppVendas.vendas.filter((venda) => {
-
+        let vendasCliente = AppVendas.vendas.filter((venda) => {
             if (venda.cliente !== undefined) {
-                venda.cliente.cpf === cpf;
-                console.log("Cliente existe " + venda.cliente);
+                return venda.cliente.cpf === cpf;
             }
         });
 
         console.log(vendasCliente);
-
-        if (vendasCliente.length > 0) {
-
-            vendasCliente.forEach((venda) => {
-                console.log(venda.toString());
-
-                const notas = AppVendas.itensVendas((itemVenda) => {
-                    return itemVenda.venda.codVenda === venda.codVenda;
-                })
-
-                notas.forEach((nota) => {
-                    console.log(nota.toString());
-                })
-            })
-
-        } else {
-            console.log("Nenhuma venda encontrada para o CPF informado.");
+        if(vendasCliente.length > 0){
+            
+        }else{
+            console.log("");
         }
+        
     } else {
         console.log("Nenhum cliente encontrado.");
     }
