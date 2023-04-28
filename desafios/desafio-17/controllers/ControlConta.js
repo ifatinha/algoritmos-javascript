@@ -1,0 +1,6 @@
+const contas = [];
+
+
+function criarConta() {
+
+}
