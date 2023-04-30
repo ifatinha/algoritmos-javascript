@@ -1,3 +1,4 @@
+import scanner from 'readline-sync';
 import Titular from "../classes/Titular.js";
 import Address from "../data/Address.js";
 import Cpfs from "../data/Cpfs.js";
@@ -17,23 +18,22 @@ function criarTitular() {
     return new Titular(cpf, nome, dataNascimento, telefone, endereco);
 }
 
-function verificarTitularCadastrado(cpf) {
-    return titulares.some((titular) => {
+function buscarTitularCpf(cpf) {
+    return titulares.findIndex((titular) => {
         return titular.cpf === cpf;
     })
 }
 
-function cadastrarTitulares() {
-    for (let i = 0; i < 10; i++) {
-        const titular = criarTitular();
-        const jaExiste = verificarTitularCadastrado(titular.cpf);
+function cadastrarTitular() {
+    let titular = criarTitular();
+    let index = buscarTitularCpf(titular.cpf);
 
-        if (jaExiste === false) {
-            titulares.push(titular);
-        } else {
-            console.log("Já existe um cliente cadastrado com o CPF informado.");
-        }
+    if (index === -1) {
+        titulares.push(titular);
+
     }
+
+    return titular;
 }
 
 function dadosTitulares() {
@@ -42,4 +42,6 @@ function dadosTitulares() {
     })
 }
 
-export default { titulares, cadastrarTitulares, dadosTitulares }
+export default {
+    titulares, dadosTitulares, cadastrarTitular
+}
