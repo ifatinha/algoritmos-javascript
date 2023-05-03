@@ -83,7 +83,7 @@ function consultarEvento() {
 
 function eventosCadastrados() {
     if (eventos.length > 0) {
-        console.log("Eventos Cadastrados\n");
+        console.log("EVENTOS CADASTRADOS\n");
         eventos.forEach((evento) => {
             console.log(evento.toString());
         })

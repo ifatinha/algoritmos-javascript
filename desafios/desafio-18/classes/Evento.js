@@ -10,7 +10,7 @@ export default class Evento {
         this.local = local;
         this.dataRealizacao = dataRealizacao;
         this.qtdConvites = qtdConvites;
-        this.entradas = [3];
+        this.entradas = [];
         this.custoOrganizacao = custoOrganizacao;
     }
 
@@ -20,7 +20,7 @@ export default class Evento {
             "Data: " + FormatadorData.mostrarData(this.dataRealizacao) +
             "\nConvites: " + this.qtdConvites + "\n" +
             "Custo de Organização: " + this.custoOrganizacao + "\n" +
-            "Entradas: " + this.mostrarEntradas());
+            "Entradas\n" + this.mostrarEntradas());
     }
 
     mostrarEntradas() {

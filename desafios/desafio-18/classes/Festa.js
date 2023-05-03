@@ -7,7 +7,7 @@ export default class Festa extends Evento {
 
     constructor(tipo, descricao, local, dataRealizacao, qtdConvites, valorEntrada, custoOrganizacao) {
         super(tipo, descricao, local, dataRealizacao, qtdConvites, valorEntrada, custoOrganizacao);
-        this.bebidas = [4];
+        this.bebidas = [];
     }
 
     toString() {
@@ -42,29 +42,26 @@ export default class Festa extends Evento {
     calcularEntradas() {
         const tiposEntradas = ["Popular", "Normal", "VIP"];
         let valorEntradaNormal = 0;
+        let valor = 0.0;
 
         for (let i = 0; i < tiposEntradas.length; i++) {
-            let tipo = tiposEntradas[i];
-            let valor = 0;
-
-            if (tipo === "Popular") {
+            if (tiposEntradas[i] === "Popular") {
                 if (this.tipo === "Open Bar") {
-                    valor = 30;
-                    for (let j = 0; j < this.bebidas.length; j++) {
-                        valor += (this.bebidas[j].valorUnitario * 0.5);
-                    }
+                    let lucroBebidas = this.bebidas.reduce((total, bebida) => {
+                        return total + (bebida.valorUnitario * 0.5);
+                    }, 0)
+                    valor = (30 + lucroBebidas);
                 } else {
-                    valor = this.custoOrganizacao / this.qtdConvites;
-
+                    valor = (this.custoOrganizacao / this.qtdConvites);
                 }
                 valorEntradaNormal = valor;
-            } else if (tipo === "Normal") {
+            } else if (tiposEntradas[i] === "Normal") {
                 valor = valorEntradaNormal + (valorEntradaNormal * 0.1);
-            } else if (tipo === "VIP") {
+            } else if (tiposEntradas[i] === "VIP") {
                 valor = valorEntradaNormal + (valorEntradaNormal * 0.15);
             }
 
-            this.entradas.push(new Entrada(tipo, valor));
+            this.entradas.push(new Entrada(tiposEntradas[i], valor));
         }
     }
 }
