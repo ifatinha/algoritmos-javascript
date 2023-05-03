@@ -1,7 +1,7 @@
 import scanner from 'readline-sync'
-import Bebida from '../classes/Bebida';
-import FormatadorData from '../util/FormatadorData';
-import Entrada from '../classes/Entrada';
+import FormatadorData from '../util/FormatadorData.js';
+import Festa from '../classes/Festa.js';
+import Evento from '../classes/Evento.js';
 
 const eventos = [];
 
@@ -18,29 +18,16 @@ function tiposEventos() {
     return tipos[Math.floor((Math.random() * 4) + 0)]
 }
 
-function cadastrarBebidas() {
-    let bebidas = [];
-
-    for (let i = 0; i < 4; i++) {
-        let nome = Bebida.nomeBebida();
-        let teorAlcool = scanner.questionFloat("Teor de Alcool: ");
-        let preco = scanner.questionFloat("Preço Unitario: ");
-        bebidas.push(new Bebida(nome, teorAlcool, preco));
-    }
-
-    return bebidas;
-}
-
 function dataEvento() {
     let eValido;
 
     let stringData = scanner.question("Data de realização: (dd/mm/yyyy): ");
-    eValido = stringData.match(FormatadorData.paternData(data));
+    eValido = stringData.match(FormatadorData.paternData());
 
     while (eValido === null) {
         console.log("Formato inválido!");
-        data = scanner.question("Data de realização: (dd/mm/yyyy): ");
-        eValido = stringData.match(FormatadorData.paternData(data));
+        stringData = scanner.question("Data de realização: (dd/mm/yyyy): ");
+        eValido = stringData.match(FormatadorData.paternData());
     }
 
     let stringHora = scanner.question("Hora do atendimento (hh:mm): ");
@@ -55,54 +42,53 @@ function dataEvento() {
 
 }
 
-function criarEntradas(tipoEvento, bebidas, custoOrganizacao, qtdConvites) {
-    const tiposEntradas = ["Popular", "Normal", "VIP"];
-    const entradas = [];
-    let valorEntradaNormal = 0;
-
-    for (let i = 0; i < tiposEntradas.length; i++) {
-        let tipo = tiposEntradas[i];
-        let valor = 0;
-
-        if (tipo === "Popular") {
-            if (tipoEvento === "Open Bar") {
-                valor = 30;
-
-                for (let j = 0; j < bebidas.length; j++) {
-                    valor += (bebidas[j].valorUnitario * 0.5);
-                }
-
-            } else {
-                valor = custoOrganizacao / qtdConvites;
-
-            }
-
-            valorEntradaNormal = valor;
-
-        } else if (tipo === "Normal") {
-            valor = valorEntradaNormal + (valorEntradaNormal * 0.1);
-        } else if (tipo === "VIP") {
-            valor = valorEntradaNormal + (valorEntradaNormal * 0.15);
-        }
-
-        entradas.push(new Entrada(tipo, valor));
-    }
-
-    return entradas;
-}
-
 function cadastrarEvento() {
     let tipoEvento = tiposEventos();
-    
+    console.log("Tipo de Evento: " + tipoEvento);
     let descricao = scanner.question("Descrição: ");
     let local = scanner.question("Local: ");
     let data = dataEvento();
     let qtdConvites = scanner.questionInt("Quantidade de Convites: ");
     let custoOrganizacao = scanner.questionFloat("Custo de organização: ");
-    let entradas = criarEntradas(tipoEvento, bebidas, custoOrganizacao, qtdConvites);
 
     if (tipoEvento === "Open Bar") {
-        const bebidas = cadastrarBebidas();
+        const festa = new Festa(tipoEvento, descricao, local, data, qtdConvites, custoOrganizacao);
+        festa.cadastrarBebidas();
+        festa.calcularEntradas();
+        console.log("Foi cadastrado um evendo com os dados abaixo\n" +
+            festa.toString());
+        eventos.push(festa);
+    } else {
+        const evento = new Evento(tipoEvento, descricao, local, data, qtdConvites, custoOrganizacao);
+        evento.calcularEntradas();
+        console.log("Foi cadastrado um evendo com os dados abaixo\n" +
+            evento.toString());
+        eventos.push(evento);
+    }
+}
+
+function consultarEvento() {
+    let codigo = scanner.questionInt("Digite o codigo do evento: ");
+    let index = eventos.findIndex((evento) => {
+        return evento.identificador === codigo;
+    })
+
+    if (index !== -1) {
+        console.log("Detalhes do Evendo\n" +
+            eventos[index].toString());
+    } else {
+        console.log("Não foi encontrado eventos com o codigo cadastrado!");
+    }
+}
+
+function eventosCadastrados() {
+    if (eventos.length > 0) {
+        console.log("Eventos Cadastrados\n");
+        eventos.forEach((evento) => {
+            console.log(evento.toString());
+        })
+    } else {
+        console.log("Nenhum evento cadastrado.");
     }
 }
 
@@ -111,7 +97,7 @@ function programaPrincipal() {
 
     do {
         opcao = menu();
-
+        console.clear();
         switch (opcao) {
 
             case 1:
@@ -119,9 +105,11 @@ function programaPrincipal() {
                 break;
 
             case 2:
+                consultarEvento();
                 break;
 
             case 3:
+                eventosCadastrados();
                 break;
 
             case 4:
