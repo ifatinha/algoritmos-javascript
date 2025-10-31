@@ -1,4 +1,4 @@
-/** Faça um algoritmo para calcular a média aritmética entre três notas de um aluno e 
+/** Faça um algoritmo para calcular a média aritmética entre três notas de um aluno e
  * mostrar sua situação, que pode ser aprovado ou reprovado. */
 
 import scanner from "readline-sync";
@@ -12,7 +12,7 @@ let media = (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) / 3;
 console.log("Média: " + media.toFixed(2));
 
 if (media > 7.0) {
-    console.log("Aluno aprovado!");
+  console.log("Aluno aprovado!");
 } else {
-    console.log("Aluno reprovado!");
+  console.log("Aluno reprovado!");
 }

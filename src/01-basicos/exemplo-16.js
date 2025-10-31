@@ -1,6 +1,6 @@
 /**Faça um programa que receba dois números maiores que zero, calcule e mostre um elevado ao outro.*/
 
-import scanner from "readline-sync"
+import scanner from "readline-sync";
 
 let numero1 = parseInt(scanner.question("Digite o primeiro numero: "));
 let numero2 = parseInt(scanner.question("Digite o segundo numero: "));

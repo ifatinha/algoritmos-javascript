@@ -1,1 +1,1 @@
-import scanner from 'readline-sync';
+import scanner from "readline-sync";

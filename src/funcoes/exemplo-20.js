@@ -2,53 +2,53 @@
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 function lerDados() {
-    const matriz = [];
-    for (let i = 0; i < 12; i++) {
-        const linha = [];
-        for (let j = 0; j < 12; j++) {
-            linha.push(Math.floor((Math.random() * 99) + 1));
-        }
-        matriz.push(linha);
+  const matriz = [];
+  for (let i = 0; i < 12; i++) {
+    const linha = [];
+    for (let j = 0; j < 12; j++) {
+      linha.push(Math.floor(Math.random() * 99 + 1));
     }
+    matriz.push(linha);
+  }
 
-    return matriz;
+  return matriz;
 }
 
 function diagonalPrincipal(mat) {
-    const dp = [];
-    let contador = 1;
-    for (let i = 0; i < 12; i++) {
-        const vet = mat[i];
-        const aux = [];
-        for (let j = 0; j < contador; j++) {
-            aux.push(vet[j]);
-        }
-        contador++;
-        dp.push(aux);
+  const dp = [];
+  let contador = 1;
+  for (let i = 0; i < 12; i++) {
+    const vet = mat[i];
+    const aux = [];
+    for (let j = 0; j < contador; j++) {
+      aux.push(vet[j]);
     }
+    contador++;
+    dp.push(aux);
+  }
 
-    return dp;
+  return dp;
 }
 
 function somar(total, elemento) {
-    return total + elemento;
+  return total + elemento;
 }
 
 function somarElementos(mat) {
-    let soma = 0;
-    for (let i = 0; i < 12; i++) {
-        soma += mat[i].reduce(somar);
-    }
+  let soma = 0;
+  for (let i = 0; i < 12; i++) {
+    soma += mat[i].reduce(somar);
+  }
 
-    return soma;
+  return soma;
 }
 
 function totalElementos(mat) {
-    let qtd = 0
-    for (let i = 0; i < 12; i++) {
-        qtd += mat[i].length;
-    }
-    return qtd;
+  let qtd = 0;
+  for (let i = 0; i < 12; i++) {
+    qtd += mat[i].length;
+  }
+  return qtd;
 }
 
 const matriz = lerDados();
@@ -60,4 +60,6 @@ console.log("\nElementos Abaixo da DP\n" + elementos.join("\n"));
 let qtdElementos = totalElementos(elementos);
 let media = somarElementos(elementos) / qtdElementos;
 
-console.log("\Média dos elementos abaixo da diagonal principal: " + media.toFixed(2));
+console.log(
+  "\Média dos elementos abaixo da diagonal principal: " + media.toFixed(2)
+);

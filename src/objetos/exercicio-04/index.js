@@ -12,50 +12,53 @@ let matriculas = [];
 let opcao;
 
 do {
-    opcao = gerenciadorMenu.menuPrincipal();
+  opcao = gerenciadorMenu.menuPrincipal();
 
-    switch (opcao) {
-        case 1:
-            console.clear();
-            disciplinas = gerenciadorDisciplina.cadastrarDisciplina(disciplinas);
-            disciplinas.forEach(function (disciplina) {
-                disciplina.toString();
-            });
-            break;
+  switch (opcao) {
+    case 1:
+      console.clear();
+      disciplinas = gerenciadorDisciplina.cadastrarDisciplina(disciplinas);
+      disciplinas.forEach(function (disciplina) {
+        disciplina.toString();
+      });
+      break;
 
-        case 2:
-            console.clear();
-            alunos = gerenciadorAluno.cadastrarAluno(alunos);
-            alunos.forEach(function (aluno) {
-                aluno.toString();
-            });
-            break;
+    case 2:
+      console.clear();
+      alunos = gerenciadorAluno.cadastrarAluno(alunos);
+      alunos.forEach(function (aluno) {
+        aluno.toString();
+      });
+      break;
 
-        case 3:
-            console.clear();
-            matriculas = gerenciadorMatricula.matricularAluno(alunos, disciplinas, matriculas);
-            matriculas.forEach(function (matricula) {
-                matricula.toString();
-            });
-            break;
+    case 3:
+      console.clear();
+      matriculas = gerenciadorMatricula.matricularAluno(
+        alunos,
+        disciplinas,
+        matriculas
+      );
+      matriculas.forEach(function (matricula) {
+        matricula.toString();
+      });
+      break;
 
-        case 4:
-            console.clear();
-            matriculas = gerenciadorMatricula.alterarMatricula(matriculas);
-            break;
+    case 4:
+      console.clear();
+      matriculas = gerenciadorMatricula.alterarMatricula(matriculas);
+      break;
 
-        case 5:
-            console.clear();
-            gerenciadorMatricula.visualizarBoletim(matriculas);
-            break;
+    case 5:
+      console.clear();
+      gerenciadorMatricula.visualizarBoletim(matriculas);
+      break;
 
-        case 6:
-            console.log("Encerrando aplicação!");
-            break;
+    case 6:
+      console.log("Encerrando aplicação!");
+      break;
 
-        default:
-            console.log("Opção inválida!");
-            break;
-    }
-
+    default:
+      console.log("Opção inválida!");
+      break;
+  }
 } while (opcao !== 6);

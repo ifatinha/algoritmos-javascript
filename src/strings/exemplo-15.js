@@ -1,21 +1,21 @@
 /** Capitulo 09 - Manipulando Cadeias de Caracteres: Exemplo 15
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 function gerarLogin(nome) {
-    let nomes = nome.split(" ");
-    let login = "";
+  let nomes = nome.split(" ");
+  let login = "";
 
-    for (let i = 0; i < nomes.length; i++) {
-        if (i !== nomes.length - 1) {
-            login += nomes[i].charAt(0);
-        } else {
-            login += nomes[i];
-        }
+  for (let i = 0; i < nomes.length; i++) {
+    if (i !== nomes.length - 1) {
+      login += nomes[i].charAt(0);
+    } else {
+      login += nomes[i];
     }
+  }
 
-    return login;
+  return login;
 }
 
 let nome = scanner.question("Digite seu nome completo: ");

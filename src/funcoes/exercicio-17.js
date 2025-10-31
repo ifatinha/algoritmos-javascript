@@ -1,20 +1,18 @@
 /** Capitulo 08 - sub-rotinas: Exercicio 17
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync';
+import scanner from "readline-sync";
 
 function calcularMDC(num1, num2) {
-    let resto;
+  let resto;
 
-    do {
+  do {
+    resto = num1 % num2;
+    num1 = num2;
+    num2 = resto;
+  } while (resto !== 0);
 
-        resto = num1 % num2;
-        num1 = num2;
-        num2 = resto;
-
-    } while (resto !== 0);
-
-    return num1;
+  return num1;
 }
 
 console.log("Cálculo do Máximo Divisor Comum");

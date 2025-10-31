@@ -1,30 +1,32 @@
 /** Capitulo 09 - Manipulando Cadeias de Caracteres: Exemplo 14
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 function formatarPalavra(palavra) {
-    let palavraFormatada = "";
+  let palavraFormatada = "";
 
-    for (let i = 0; i < palavra.length; i++) {
-        palavraFormatada = i === 0 ? palavraFormatada += palavra.charAt(i).toUpperCase() :
-            palavraFormatada += palavra.charAt(i);
-    }
+  for (let i = 0; i < palavra.length; i++) {
+    palavraFormatada =
+      i === 0
+        ? (palavraFormatada += palavra.charAt(i).toUpperCase())
+        : (palavraFormatada += palavra.charAt(i));
+  }
 
-    return palavraFormatada;
+  return palavraFormatada;
 }
 
 function formatarTexto(texto) {
-    let novoTexto = texto.split(" ");
-    let textoFormatado = "";
+  let novoTexto = texto.split(" ");
+  let textoFormatado = "";
 
-    for (let i = 0; i < novoTexto.length; i++) {
-        let palavra = novoTexto[i];
+  for (let i = 0; i < novoTexto.length; i++) {
+    let palavra = novoTexto[i];
 
-        textoFormatado += formatarPalavra(palavra) + " ";
-    }
+    textoFormatado += formatarPalavra(palavra) + " ";
+  }
 
-    return textoFormatado;
+  return textoFormatado;
 }
 
 let texto1 = scanner.question("Digite um texto: ");

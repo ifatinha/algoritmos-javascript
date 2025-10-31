@@ -16,11 +16,13 @@ let nota3 = scanner.questionFloat("Nota 03: ");
 let media = (nota1 + nota2 + nota3) / 3;
 
 if (media >= 7 && media <= 10) {
-    console.log("Média: " + media.toFixed(2) + " ----> Situação: Aprovado!");
+  console.log("Média: " + media.toFixed(2) + " ----> Situação: Aprovado!");
 } else if (media >= 3.0 && media < 7.0) {
-    let notaExame = 12 - media;
-    console.log("Média: " + media.toFixed(2) + " ----> Situação: Exame!");
-    console.log("Aluno precisa tirar nota " + notaExame.toFixed(2) + " no exame.");
+  let notaExame = 12 - media;
+  console.log("Média: " + media.toFixed(2) + " ----> Situação: Exame!");
+  console.log(
+    "Aluno precisa tirar nota " + notaExame.toFixed(2) + " no exame."
+  );
 } else {
-    console.log("Média: " + media.toFixed(2) + " ----> Situação: Reprovado!");
+  console.log("Média: " + media.toFixed(2) + " ----> Situação: Reprovado!");
 }

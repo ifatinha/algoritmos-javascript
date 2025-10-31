@@ -2,29 +2,29 @@
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 function lerDados() {
-    const numeros = [];
-    for (let i = 0; i < 5; i++) {
-        const vet = [];
-        for (let j = 0; j < 5; j++) {
-            vet.push(Math.floor((Math.random() * 999) + 1));
-        }
-        numeros.push(vet);
+  const numeros = [];
+  for (let i = 0; i < 5; i++) {
+    const vet = [];
+    for (let j = 0; j < 5; j++) {
+      vet.push(Math.floor(Math.random() * 999 + 1));
     }
+    numeros.push(vet);
+  }
 
-    return numeros;
+  return numeros;
 }
 
 function somarElementos(total, num) {
-    return total + num;
+  return total + num;
 }
 
 function somarMatriz(mat) {
-    let soma = 0;
-    for (let i = 0; i < 5; i++) {
-        soma += mat[i].reduce(somarElementos);
-    }
+  let soma = 0;
+  for (let i = 0; i < 5; i++) {
+    soma += mat[i].reduce(somarElementos);
+  }
 
-    return soma;
+  return soma;
 }
 
 const matriz = lerDados();

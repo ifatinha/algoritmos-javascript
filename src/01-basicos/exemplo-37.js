@@ -1,4 +1,4 @@
-/**Faça um programa que calcule e mostre a área de um losango. 
+/**Faça um programa que calcule e mostre a área de um losango.
  * Sabe-se que: A = (diagonal maior * diagonal menor)/2.*/
 
 import scanner from "readline-sync";

@@ -1,59 +1,59 @@
 /** Capitulo 08 - sub-rotinas: Exercicio 21
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync';
+import scanner from "readline-sync";
 
 function lerDados() {
-    const matrix = [];
+  const matrix = [];
 
-    for (let i = 0; i < 10; i++) {
-        const vet = [];
-        for (let j = 0; j < 10; j++) {
-            vet.push(Math.floor((Math.random() * 9999) + 1));
-        }
-
-        matrix.push(vet);
+  for (let i = 0; i < 10; i++) {
+    const vet = [];
+    for (let j = 0; j < 10; j++) {
+      vet.push(Math.floor(Math.random() * 9999 + 1));
     }
 
-    return matrix;
+    matrix.push(vet);
+  }
+
+  return matrix;
 }
 
 function diagonalPrincipal(matriz) {
-    const mat = [];
-    let contador = 0;
+  const mat = [];
+  let contador = 0;
 
-    for (let i = 0; i < 10; i++) {
-        let vet = matriz[i];
-        let aux = []
-        for (let j = contador; j < 10; j++) {
-            aux.push(vet[j]);
-        }
-
-        contador++;
-        mat.push(aux);
+  for (let i = 0; i < 10; i++) {
+    let vet = matriz[i];
+    let aux = [];
+    for (let j = contador; j < 10; j++) {
+      aux.push(vet[j]);
     }
 
-    return mat;
+    contador++;
+    mat.push(aux);
+  }
+
+  return mat;
 }
 
 function maiorElemento(mat) {
-    let maior;
+  let maior;
 
-    for (let i = 0; i < 10; i++) {
-        let vet = mat[i];
+  for (let i = 0; i < 10; i++) {
+    let vet = mat[i];
 
-        if (i === 0) {
-            maior = vet[0];
-        }
-
-        for (let j = 0; j < vet.length; j++) {
-            if (maior < vet[j]) {
-                maior = vet[j];
-            }
-        }
+    if (i === 0) {
+      maior = vet[0];
     }
 
-    return maior;
+    for (let j = 0; j < vet.length; j++) {
+      if (maior < vet[j]) {
+        maior = vet[j];
+      }
+    }
+  }
+
+  return maior;
 }
 
 const matriz = lerDados();

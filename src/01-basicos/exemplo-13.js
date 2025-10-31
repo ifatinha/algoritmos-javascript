@@ -1,7 +1,7 @@
-/**Faça um programa que calcule e mostre a área de um triângulo. 
+/**Faça um programa que calcule e mostre a área de um triângulo.
  * Sabe-se que: Área = (base * altura)/2 */
 
-import scanner from "readline-sync"
+import scanner from "readline-sync";
 
 console.log("Para calcular a base do triângulo informe os dados abaixo");
 let base = parseFloat(scanner.question("Base: "));

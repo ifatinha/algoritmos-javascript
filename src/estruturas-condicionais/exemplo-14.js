@@ -9,7 +9,7 @@ sALário AuxíLio                 EsCoLA
 Até R$ 600,00                   R$ 150,00
 Acima de R$ 600,00              R$ 100,00 */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 let salario = scanner.questionFloat("Digite o salario do funcionario: ");
 let novoSalario = 0.0;
@@ -17,17 +17,17 @@ let bonificacao = 0.0;
 let auxilio = 0.0;
 
 if (salario <= 500) {
-    bonificacao = (salario * 5) / 100;
+  bonificacao = (salario * 5) / 100;
 } else if (salario > 500 && salario <= 1200) {
-    bonificacao = (salario * 12) / 100;
+  bonificacao = (salario * 12) / 100;
 } else {
-    bonificacao = 0.0;
+  bonificacao = 0.0;
 }
 
 if (salario < 600) {
-    auxilio = 150;
+  auxilio = 150;
 } else {
-    auxilio = 100;
+  auxilio = 100;
 }
 
 novoSalario = salario + bonificacao + auxilio;

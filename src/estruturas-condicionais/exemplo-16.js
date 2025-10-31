@@ -8,7 +8,7 @@ VENdA MédiA MENsAL           PrEço ATuAL               % dE AuMENTo           
 Faça um programa que receba o preço atual e a venda média mensal do produto, calcule e mostre o
 novo preço. */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 let precoProduto = scanner.questionFloat("Preco atual do produto: ");
 let vendaMedia = scanner.questionFloat("Media de venda mensal do produto: ");
@@ -17,14 +17,17 @@ let desconto = 0.0;
 let novoPreco = 0.0;
 
 if (vendaMedia < 500 || precoProduto < 30) {
-    aumento = (precoProduto * 10) / 100;
-    novoPreco = precoProduto + aumento;
-} else if ((vendaMedia >= 500 && vendaMedia < 1200) || (precoProduto >= 30 && precoProduto < 80)) {
-    aumento = (precoProduto * 15) / 100;
-    novoPreco = precoProduto + aumento
+  aumento = (precoProduto * 10) / 100;
+  novoPreco = precoProduto + aumento;
+} else if (
+  (vendaMedia >= 500 && vendaMedia < 1200) ||
+  (precoProduto >= 30 && precoProduto < 80)
+) {
+  aumento = (precoProduto * 15) / 100;
+  novoPreco = precoProduto + aumento;
 } else {
-    desconto = (precoProduto * 20) / 100;
-    novoPreco = precoProduto - desconto;
+  desconto = (precoProduto * 20) / 100;
+  novoPreco = precoProduto - desconto;
 }
 
 console.log("Preço atual".padEnd(50, ".") + ": R$ " + vendaMedia);

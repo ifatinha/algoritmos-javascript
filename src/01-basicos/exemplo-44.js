@@ -16,6 +16,12 @@ let cotacaoPesoUruguaio = qtdReal * 7.33;
 console.log("Valor em Real".padEnd(50, ".") + ": " + qtdReal + "BR$");
 console.log("Valor em Dolar".padEnd(50, ".") + ": " + cotacaoDolar + "US$");
 console.log("Valor em Euro".padEnd(50, ".") + ": " + cotacaoEuro + "€");
-console.log("Valor em Esterlina".padEnd(50, ".") + ": " + cotacaoEsterlina + "£");
-console.log("Valor em Peso Argentino".padEnd(50, ".") + ": " + cotacaoPesoArgentino + "$");
-console.log("Valor em Peso Uruguaio".padEnd(50, ".") + ": " + cotacaoPesoArgentino + "$");
+console.log(
+  "Valor em Esterlina".padEnd(50, ".") + ": " + cotacaoEsterlina + "£"
+);
+console.log(
+  "Valor em Peso Argentino".padEnd(50, ".") + ": " + cotacaoPesoArgentino + "$"
+);
+console.log(
+  "Valor em Peso Uruguaio".padEnd(50, ".") + ": " + cotacaoPesoArgentino + "$"
+);

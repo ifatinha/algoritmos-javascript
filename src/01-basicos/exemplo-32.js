@@ -13,6 +13,12 @@ let valorComissao = valorVendas * COMISSAO;
 let novoSalario = salario + valorComissao;
 
 console.log("Salário Fixo".padEnd(50, ".") + ": " + salario.toFixed(2) + "R$");
-console.log("Total Vendas".padEnd(50, ".") + ": " + valorVendas.toFixed(2) + "R$");
-console.log("Valor Comissão".padEnd(50, ".") + ": " + valorComissao.toFixed(2) + "R$");
-console.log("Salário com comissão".padEnd(50, ".") + ": " + novoSalario.toFixed(2) + "R$");
+console.log(
+  "Total Vendas".padEnd(50, ".") + ": " + valorVendas.toFixed(2) + "R$"
+);
+console.log(
+  "Valor Comissão".padEnd(50, ".") + ": " + valorComissao.toFixed(2) + "R$"
+);
+console.log(
+  "Salário com comissão".padEnd(50, ".") + ": " + novoSalario.toFixed(2) + "R$"
+);

@@ -20,19 +20,19 @@ let trabalho = scanner.questionFloat("Nota Trabalho de Laboratório: ");
 let avaliacao = scanner.questionFloat("Nota da Avaliação Semestral: ");
 let exame = scanner.questionFloat("Nota do Exame Final: ");
 
-let media = ((trabalho * 2) + (avaliacao * 3) + (exame * 5)) / (2 + 3 + 5);
+let media = (trabalho * 2 + avaliacao * 3 + exame * 5) / (2 + 3 + 5);
 let conceito = "";
 
 if (media >= 8.0 && media <= 10) {
-    conceito = "A";
+  conceito = "A";
 } else if (media >= 7.0 && media < 8.0) {
-    conceito = "B";
+  conceito = "B";
 } else if (media >= 6.0 && media < 7.0) {
-    conceito = "C";
+  conceito = "C";
 } else if (media >= 5.0 && media < 6.0) {
-    conceito = "D";
+  conceito = "D";
 } else {
-    conceito = "E";
+  conceito = "E";
 }
 
 console.log("Média ponderada".padEnd(20, ".") + ": " + media.toFixed(2));

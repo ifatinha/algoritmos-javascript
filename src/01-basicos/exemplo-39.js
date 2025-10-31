@@ -5,8 +5,7 @@ c) a idade dessa pessoa em dias;
 d) a idade dessa pessoa em semanas. 
  */
 
-import scanner from "readline-sync"
-
+import scanner from "readline-sync";
 
 let anoNascimento = scanner.questionInt("Digite o ano do seu nascimento: ");
 
@@ -16,9 +15,9 @@ let mesAtual = dataAtual.getMonth();
 let diaAtual = dataAtual.getDate();
 
 let idadeEmAnos = anoAtual - anoNascimento;
-let idadeEmMeses = (idadeEmAnos * 12) + mesAtual + 1;
-let idadeEmDias = (idadeEmAnos * 365) + diaAtual;
-let idadeEmSemanas = (idadeEmAnos * 48);
+let idadeEmMeses = idadeEmAnos * 12 + mesAtual + 1;
+let idadeEmDias = idadeEmAnos * 365 + diaAtual;
+let idadeEmSemanas = idadeEmAnos * 48;
 
 console.log("Sua idade em anos".padEnd(50, ".") + ": " + idadeEmAnos);
 console.log("Sua idade em meses".padEnd(50, ".") + ": " + idadeEmMeses);

@@ -1,5 +1,5 @@
 /**Faça um programa que calcule e mostre a área de um círculo. Sabe-se que: Área = p * R2 */
-import scanner from "readline-sync"
+import scanner from "readline-sync";
 
 console.log("Para calcular a área de um círculo informe os dados abaixo");
 

@@ -1,27 +1,27 @@
 /** Capitulo 09 - Manipulando Cadeias de Caracteres: Exercicio 20
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
-function criptografar(texto){
-    let textoCriptografado = [];
+function criptografar(texto) {
+  let textoCriptografado = [];
 
-    for(let i = 0; i < texto.length; i++){
-        textoCriptografado.push(texto.charCodeAt(i));
-    }
+  for (let i = 0; i < texto.length; i++) {
+    textoCriptografado.push(texto.charCodeAt(i));
+  }
 
-    return textoCriptografado;
+  return textoCriptografado;
 }
 
-function descriptografar(texto){
-    let textoCriptografado = "";
+function descriptografar(texto) {
+  let textoCriptografado = "";
 
-    for(let i = 0; i < texto.length; i++){
-        let codigo = parseInt(texto[i]);
-        textoCriptografado += String.fromCharCode(codigo);
-    }
+  for (let i = 0; i < texto.length; i++) {
+    let codigo = parseInt(texto[i]);
+    textoCriptografado += String.fromCharCode(codigo);
+  }
 
-    return textoCriptografado;
+  return textoCriptografado;
 }
 
 let texto = scanner.question("Digite uma mensagem: ");

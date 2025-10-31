@@ -5,26 +5,26 @@ const numeros1 = [];
 const numeros2 = [];
 
 function lerDados() {
-    for (let i = 0; i < 10; i++) {
-        numeros1.push(Math.floor((Math.random() * 99) + 1));
-        numeros2.push(Math.floor((Math.random() * 99) + 1));
-    }
+  for (let i = 0; i < 10; i++) {
+    numeros1.push(Math.floor(Math.random() * 99 + 1));
+    numeros2.push(Math.floor(Math.random() * 99 + 1));
+  }
 }
 
 function uniaoVetores(num1, num2) {
-    const uniao = [];
+  const uniao = [];
 
-    for (let i = 0; i < 10; i++) {
-        if (!uniao.includes(num1[i])) {
-            uniao.push(num1[i]);
-        }
-
-        if (!uniao.includes(num2[i])) {
-            uniao.push(num2[i]);
-        }
+  for (let i = 0; i < 10; i++) {
+    if (!uniao.includes(num1[i])) {
+      uniao.push(num1[i]);
     }
 
-    return uniao;
+    if (!uniao.includes(num2[i])) {
+      uniao.push(num2[i]);
+    }
+  }
+
+  return uniao;
 }
 
 lerDados();

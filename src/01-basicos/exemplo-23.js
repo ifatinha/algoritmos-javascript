@@ -1,5 +1,5 @@
-/**Sabe-se que o quilowatt de energia custa um quinto do salário mínimo. Faça um programa que 
- * receba o valor do salário mínimo e a quantidade de quilowatts consumida por uma residência. 
+/**Sabe-se que o quilowatt de energia custa um quinto do salário mínimo. Faça um programa que
+ * receba o valor do salário mínimo e a quantidade de quilowatts consumida por uma residência.
  * Calcule e mostre:
  * a) o valor de cada quilowatt;
  * b) o valor a ser pago por essa residência;
@@ -21,4 +21,3 @@ console.log("Quantidade de KWs gasta".padEnd(50, ".") + ": " + qtdKW + "Kw");
 console.log("Valor total".padEnd(50, ".") + ": " + KWGastos + "R$");
 console.log("Valor Desconto".padEnd(50, ".") + ": " + valorDesconto + "R$");
 console.log("Valor A Pagar".padEnd(50, ".") + ": " + valorComDesconto + "R$");
-

@@ -10,4 +10,4 @@ let baseMenor = scanner.questionFloat("Valor base menor: ");
 
 let area = ((baseMaior + baseMenor) * altura) / 2;
 
-console.log("Área do trapézio: "+area.toFixed(2))
+console.log("Área do trapézio: " + area.toFixed(2));

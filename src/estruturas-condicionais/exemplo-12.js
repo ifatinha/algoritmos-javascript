@@ -7,7 +7,7 @@ Código CArgo        PErCENTuAL
 4      Gerente         10%
 5      Diretor     Não tem aumento */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 let codigoFunc = scanner.questionInt("Informe o codigo do funcionario: ");
 let salario = scanner.questionFloat("Informe o salario do funcionario: ");
@@ -15,28 +15,28 @@ let aumento = 0.0;
 let cargo = "";
 
 switch (codigoFunc) {
-    case 1:
-        aumento = (salario * 50) / 100;
-        cargo = "Escrituário";
-        break;
-    case 2:
-        aumento = (salario * 35) / 100;
-        cargo = "Secretário";
-        break;
-    case 3:
-        aumento = (salario * 20) / 100;
-        cargo = "Caixa";
-        break;
-    case 4:
-        cargo = "Gerente";
-        aumento = (salario * 10) / 100;
-        break;
-    case 5:
-        cargo = "Diretor";
-        console.log("O cargo de Diretor não tem aumento.");
-        break;
-    default:
-        console.log("Cargo inválido");
+  case 1:
+    aumento = (salario * 50) / 100;
+    cargo = "Escrituário";
+    break;
+  case 2:
+    aumento = (salario * 35) / 100;
+    cargo = "Secretário";
+    break;
+  case 3:
+    aumento = (salario * 20) / 100;
+    cargo = "Caixa";
+    break;
+  case 4:
+    cargo = "Gerente";
+    aumento = (salario * 10) / 100;
+    break;
+  case 5:
+    cargo = "Diretor";
+    console.log("O cargo de Diretor não tem aumento.");
+    break;
+  default:
+    console.log("Cargo inválido");
 }
 
 let novoSalario = salario + aumento;

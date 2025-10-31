@@ -7,7 +7,9 @@ d) a raiz cúbica do número digitado.
 
 import scanner from "readline-sync";
 
-let numero = parseInt(scanner.question("Digite um numero inteiro maior que 0: "));
+let numero = parseInt(
+  scanner.question("Digite um numero inteiro maior que 0: ")
+);
 
 let quadrado = Math.pow(numero, 2);
 let cubo = Math.pow(numero, 3);

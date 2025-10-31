@@ -6,9 +6,9 @@ const vet2 = [];
 const vet3 = [];
 
 for (let i = 0; i < 10; i++) {
-    vet1.push(Math.floor((Math.random() * 99) + 1));
-    vet2.push(Math.floor((Math.random() * 99) + 1));
-    vet3.push(vet1[i] * vet2[i]);
+  vet1.push(Math.floor(Math.random() * 99 + 1));
+  vet2.push(Math.floor(Math.random() * 99 + 1));
+  vet3.push(vet1[i] * vet2[i]);
 }
 
 console.log("vet1 \n" + vet1.join(" - "));

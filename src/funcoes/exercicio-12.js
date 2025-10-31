@@ -1,15 +1,15 @@
 /** Capitulo 08 - sub-rotinas: Exercicio 12
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync';
+import scanner from "readline-sync";
 
 function calcularPotencia(base, expoente) {
-    let potencia = 1;
-    for (let i = 0; i < expoente; i++) {
-        potencia *= base;
-    }
+  let potencia = 1;
+  for (let i = 0; i < expoente; i++) {
+    potencia *= base;
+  }
 
-    return potencia;
+  return potencia;
 }
 
 console.log("Calcular Potencia");

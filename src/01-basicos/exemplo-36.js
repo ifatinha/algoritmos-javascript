@@ -6,4 +6,4 @@ let lado = scanner.questionFloat("Valor do lado do quadrado: ");
 
 let area = lado * lado;
 
-console.log("Área do quadrado: "+area);
+console.log("Área do quadrado: " + area);

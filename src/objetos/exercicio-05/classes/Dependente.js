@@ -1,13 +1,12 @@
 class Dependente {
+  constructor(nome, funcionario) {
+    this.nome = nome;
+    this.funcionario = funcionario;
+  }
 
-    constructor(nome, funcionario) {
-        this.nome = nome;
-        this.funcionario = funcionario;
-    }
-
-    toString() {
-        console.log(this.nome);
-    }
+  toString() {
+    console.log(this.nome);
+  }
 }
 
 export default Dependente;

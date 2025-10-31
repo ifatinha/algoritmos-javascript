@@ -8,6 +8,15 @@ let precoAtual = scanner.questionFloat("Preço atual: ");
 let desconto = (precoAtual * 10) / 100;
 let precoComDesconto = precoAtual - desconto;
 
-console.log("Preço sem desconto".padEnd(50, ".") + ": " + precoAtual.toFixed(2) + "R$");
-console.log("Valor desconto".padEnd(50, ".") + ": " + desconto.toFixed(2) + "R$");
-console.log("Preço com desconto".padEnd(50, ".") + ": " + precoComDesconto.toFixed(2) + "R$");
+console.log(
+  "Preço sem desconto".padEnd(50, ".") + ": " + precoAtual.toFixed(2) + "R$"
+);
+console.log(
+  "Valor desconto".padEnd(50, ".") + ": " + desconto.toFixed(2) + "R$"
+);
+console.log(
+  "Preço com desconto".padEnd(50, ".") +
+    ": " +
+    precoComDesconto.toFixed(2) +
+    "R$"
+);

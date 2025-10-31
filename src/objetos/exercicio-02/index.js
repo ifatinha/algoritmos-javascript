@@ -4,4 +4,4 @@ import Pessoa from "./classes/Pessoa.js";
 
 const p1 = new Pessoa("John Doe", 28);
 console.log("Idade em 2050: " + p1.calcularIdadeFuturo());
-console.log("Sua idade em meses: "+p1.calcularIdadeMeses("1994-06-14"));
+console.log("Sua idade em meses: " + p1.calcularIdadeMeses("1994-06-14"));

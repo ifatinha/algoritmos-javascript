@@ -5,7 +5,7 @@
  * Faça um programa que receba uma medida em pés, faça as conversões a seguir e mostre os resultados.
  * a) polegadas;
  * b) jardas;
- * c) milhas.  
+ * c) milhas.
  * */
 
 import scanner from "readline-sync";

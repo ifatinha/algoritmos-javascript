@@ -1,26 +1,24 @@
 class Tipo {
+  #code;
+  #percentual;
 
-    #code;
-    #percentual;
+  constructor() {}
 
-    constructor() {
-    }
+  get _code() {
+    return this.#code;
+  }
 
-    get _code() {
-        return this.#code;
-    }
+  set _code(code) {
+    this.#code = code;
+  }
 
-    set _code(code) {
-        this.#code = code;
-    }
+  get _percentual() {
+    return this.#percentual;
+  }
 
-    get _percentual() {
-        return this.#percentual;
-    }
-
-    set _percentual(percentual) {
-        this.#percentual = percentual;
-    }
+  set _percentual(percentual) {
+    this.#percentual = percentual;
+  }
 }
 
-export default Tipo
+export default Tipo;

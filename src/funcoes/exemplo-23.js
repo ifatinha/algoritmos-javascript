@@ -2,28 +2,28 @@
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
 function lerDados() {
-    const matriz = [];
-    for (let i = 0; i < 3; i++) {
-        const linha = [];
-        for (let j = 0; j < 4; j++) {
-            linha.push(Math.floor((Math.random() * 9) + 1));
-        }
-        matriz.push(linha);
+  const matriz = [];
+  for (let i = 0; i < 3; i++) {
+    const linha = [];
+    for (let j = 0; j < 4; j++) {
+      linha.push(Math.floor(Math.random() * 9 + 1));
     }
+    matriz.push(linha);
+  }
 
-    return matriz;
+  return matriz;
 }
 
 function vetorNumeros(mat) {
-    const vet = [];
-    for (let i = 0; i < 3; i++) {
-        const aux = mat[i];
-        for (let j = 0; j < 4; j++) {
-            vet.push(aux[j]);
-        }
+  const vet = [];
+  for (let i = 0; i < 3; i++) {
+    const aux = mat[i];
+    for (let j = 0; j < 4; j++) {
+      vet.push(aux[j]);
     }
+  }
 
-    return vet;
+  return vet;
 }
 
 const matriz = lerDados();

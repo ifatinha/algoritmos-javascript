@@ -1,5 +1,5 @@
-/**João recebeu seu salário e precisa pagar duas contas atrasadas. Em razão do atraso, 
- * ele deverá pagar multa de 2% sobre cada conta. Faça um programa que calcule e mostre 
+/**João recebeu seu salário e precisa pagar duas contas atrasadas. Em razão do atraso,
+ * ele deverá pagar multa de 2% sobre cada conta. Faça um programa que calcule e mostre
  * quanto restará do salário de João. */
 
 import scanner from "readline-sync";
@@ -18,8 +18,18 @@ let salarioRestante = salario - totalPagar;
 console.log("Seu sálario".padEnd(50, ".") + ": " + salario.toFixed(2) + "R$");
 console.log("Valor conta 1".padEnd(50, ".") + ": " + conta1.toFixed(2) + "R$");
 console.log("Valor conta 2".padEnd(50, ".") + ": " + conta2.toFixed(2) + "R$");
-console.log("Valor Multa 1".padEnd(50, ".") + ": " + valorMulta1.toFixed(2) + "R$");
-console.log("Valor Multa 2".padEnd(50, ".") + ": " + valorMulta2.toFixed(2) + "R$");
-console.log("Total Multas".padEnd(50, ".") + ": " + totalMultas.toFixed(2) + "R$");
-console.log("Total pagar".padEnd(50, ".") + ": " + totalPagar.toFixed(2) + "R$");
-console.log("Sálario restante".padEnd(50, ".") + ": " + salarioRestante.toFixed(2) + "R$");
+console.log(
+  "Valor Multa 1".padEnd(50, ".") + ": " + valorMulta1.toFixed(2) + "R$"
+);
+console.log(
+  "Valor Multa 2".padEnd(50, ".") + ": " + valorMulta2.toFixed(2) + "R$"
+);
+console.log(
+  "Total Multas".padEnd(50, ".") + ": " + totalMultas.toFixed(2) + "R$"
+);
+console.log(
+  "Total pagar".padEnd(50, ".") + ": " + totalPagar.toFixed(2) + "R$"
+);
+console.log(
+  "Sálario restante".padEnd(50, ".") + ": " + salarioRestante.toFixed(2) + "R$"
+);

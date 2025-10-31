@@ -1,11 +1,10 @@
 export default class Entrada {
+  constructor(tipo, valor) {
+    this.tipo = tipo;
+    this.valor = valor;
+  }
 
-    constructor(tipo, valor) {
-        this.tipo = tipo;
-        this.valor = valor;
-    }
-
-    toString() {
-        return (this.tipo + " (R$" + this.valor.toFixed(2) + ")");
-    }
+  toString() {
+    return this.tipo + " (R$" + this.valor.toFixed(2) + ")";
+  }
 }

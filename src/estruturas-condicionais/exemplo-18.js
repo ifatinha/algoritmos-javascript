@@ -6,7 +6,7 @@ triângulo, escreva uma mensagem. Considere que:
 ■■ denomina-se isósceles o triângulo que tem o comprimento de dois lados iguais;
 ■■ recebe o nome de escaleno o triângulo que tem os três lados diferentes.  */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 console.log("Informe os dados para verificar se forma um triângulo!");
 let x = scanner.questionInt("Valor de X: ");
@@ -14,13 +14,13 @@ let y = scanner.questionInt("Valor de Y: ");
 let z = scanner.questionInt("Valor de Z: ");
 
 if (x < y + z && y < x + z && z < x + y) {
-    if (x === y && y === z) {
-        console.log("Triângulo Equilátero!");
-    } else if (x === y || x === z || y === z) {
-        console.log("Triângulo Isósceles!");
-    } else {
-        console.log("Triângulo Escaleno!");
-    }
+  if (x === y && y === z) {
+    console.log("Triângulo Equilátero!");
+  } else if (x === y || x === z || y === z) {
+    console.log("Triângulo Isósceles!");
+  } else {
+    console.log("Triângulo Escaleno!");
+  }
 } else {
-    console.log("Os valores informados não forma triângulo!");
+  console.log("Os valores informados não forma triângulo!");
 }

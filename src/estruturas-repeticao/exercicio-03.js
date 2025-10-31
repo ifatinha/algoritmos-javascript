@@ -1,7 +1,7 @@
 /** Capitulo 05 - estruturas de repetição: Exercicio Proposto 03
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 let qtdPrimeira = 0;
 let qtdSegunda = 0;
@@ -10,19 +10,19 @@ let qtdQuarta = 0;
 let qtdQuinta = 0;
 
 for (let i = 1; i <= 8; i++) {
-    let idade = scanner.questionInt("Informe a idade: ");
+  let idade = scanner.questionInt("Informe a idade: ");
 
-    if (idade <= 15) {
-        qtdPrimeira++;
-    } else if (idade > 15 && idade <= 30) {
-        qtdSegunda++;
-    } else if (idade > 30 && idade <= 45) {
-        qtdTerceira++;
-    } else if (idade > 45 && idade <= 60) {
-        qtdQuarta++;
-    } else {
-        qtdQuinta++;
-    }
+  if (idade <= 15) {
+    qtdPrimeira++;
+  } else if (idade > 15 && idade <= 30) {
+    qtdSegunda++;
+  } else if (idade > 30 && idade <= 45) {
+    qtdTerceira++;
+  } else if (idade > 45 && idade <= 60) {
+    qtdQuarta++;
+  } else {
+    qtdQuinta++;
+  }
 }
 
 let percentual1 = (qtdPrimeira * 100) / 8;

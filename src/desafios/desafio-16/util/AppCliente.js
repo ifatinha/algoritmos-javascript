@@ -1,151 +1,152 @@
-import scanner from 'readline-sync';
-import cpfClientes from '../data/CpfClientes.js'
-import Names from '../data/Names.js';
-import LastNames from '../data/LastNames.js';
-import Enderecos from '../data/Enderecos.js';
-import Telefones from '../data/Telefones.js';
-import Cliente from '../classes/Cliente.js';
+import scanner from "readline-sync";
+import cpfClientes from "../data/CpfClientes.js";
+import Names from "../data/Names.js";
+import LastNames from "../data/LastNames.js";
+import Enderecos from "../data/Enderecos.js";
+import Telefones from "../data/Telefones.js";
+import Cliente from "../classes/Cliente.js";
 
 let clientes = [];
 
 function menu() {
-    return scanner.questionInt("Manutenção de Clientes\n" +
-        "1 - Cadastrar Cliente\n" +
-        "2 - Consultar Cliente\n" +
-        "3 - Alterar Cliente\n" +
-        "4 - Excluir Cliente\n" +
-        "5 - Clientes Cadastrados\n" +
-        "6 - Voltar ao menu principal: ");
+  return scanner.questionInt(
+    "Manutenção de Clientes\n" +
+      "1 - Cadastrar Cliente\n" +
+      "2 - Consultar Cliente\n" +
+      "3 - Alterar Cliente\n" +
+      "4 - Excluir Cliente\n" +
+      "5 - Clientes Cadastrados\n" +
+      "6 - Voltar ao menu principal: "
+  );
 }
 
 function criarCliente() {
-    let cpf = cpfClientes.gerarCpf();
-    let nome = Names.generateRandomName() + " " + LastNames.generateRandomLastName();
-    let endereco = Enderecos.gerarEndereco();
-    let telefone = Telefones.generateRandomTephone();
+  let cpf = cpfClientes.gerarCpf();
+  let nome =
+    Names.generateRandomName() + " " + LastNames.generateRandomLastName();
+  let endereco = Enderecos.gerarEndereco();
+  let telefone = Telefones.generateRandomTephone();
 
-    return new Cliente(cpf, nome, endereco, telefone);
+  return new Cliente(cpf, nome, endereco, telefone);
 }
 
 function buscarClienteCpf(cpf) {
-    return clientes.some((cliente) => {
-        return cliente.cpf === cpf;
-    })
+  return clientes.some((cliente) => {
+    return cliente.cpf === cpf;
+  });
 }
 
 function cadastrarCliente() {
-    const cliente = criarCliente();
-    let jaExiste = buscarClienteCpf(cliente.cpf);
+  const cliente = criarCliente();
+  let jaExiste = buscarClienteCpf(cliente.cpf);
 
-    if (!jaExiste) {
-        console.log("Foi cadastrado um cliente com os dados abaixo:\n" +
-            cliente.toString());
-        clientes.push(cliente);
-    } else {
-        console.log("Erro! Já existe um cliente cadastrado com o CPF informado.");
-    }
+  if (!jaExiste) {
+    console.log(
+      "Foi cadastrado um cliente com os dados abaixo:\n" + cliente.toString()
+    );
+    clientes.push(cliente);
+  } else {
+    console.log("Erro! Já existe um cliente cadastrado com o CPF informado.");
+  }
 }
 
 function listarClientes() {
-    if (clientes.length > 0) {
-        console.log("Clientes cadastrados\n");
-        clientes.forEach((cliente) => {
-            console.log(cliente.toString());
-        })
-    } else {
-        console.log("Não existe nenhum cliente cadastrado.")
-    }
+  if (clientes.length > 0) {
+    console.log("Clientes cadastrados\n");
+    clientes.forEach((cliente) => {
+      console.log(cliente.toString());
+    });
+  } else {
+    console.log("Não existe nenhum cliente cadastrado.");
+  }
 }
 
 function retornarIndexCliente(cpf) {
-    return clientes.findIndex((cliente) => {
-        return cliente.cpf === cpf;
-    })
+  return clientes.findIndex((cliente) => {
+    return cliente.cpf === cpf;
+  });
 }
 
 function pesquisarCliente() {
-    let cpf = scanner.question("Digite o CPF do cliente: ");
-    let index = retornarIndexCliente(cpf);
+  let cpf = scanner.question("Digite o CPF do cliente: ");
+  let index = retornarIndexCliente(cpf);
 
-    if (index !== -1) {
-        console.log("Detalhes do cliente\n" +
-            clientes[index].toString());
-    } else {
-        console.log("Nenhum cliente encontrado!");
-    }
+  if (index !== -1) {
+    console.log("Detalhes do cliente\n" + clientes[index].toString());
+  } else {
+    console.log("Nenhum cliente encontrado!");
+  }
 }
 
 function alterarDadosCliente() {
-    let cpf = scanner.question("Digite o cpf do paciente: ");
-    let index = retornarIndexCliente(cpf);
+  let cpf = scanner.question("Digite o cpf do paciente: ");
+  let index = retornarIndexCliente(cpf);
 
-    if (index !== -1) {
-        console.log("Detalhes do cliente\n" +
-            clientes[index].toString());
+  if (index !== -1) {
+    console.log("Detalhes do cliente\n" + clientes[index].toString());
 
-        clientes[index].nomeCompleto = scanner.question("Nome Cliente: ");
-        clientes[index].telefone = scanner.question("Telefone: ");
-        clientes[index].endereco = scanner.question("Endereço: ");
-        console.log("\nDados do cliente atualizado\n" +
-            clientes[index].toString());
-
-    } else {
-        console.log("Nenhum cliente encontrado!");
-    }
+    clientes[index].nomeCompleto = scanner.question("Nome Cliente: ");
+    clientes[index].telefone = scanner.question("Telefone: ");
+    clientes[index].endereco = scanner.question("Endereço: ");
+    console.log("\nDados do cliente atualizado\n" + clientes[index].toString());
+  } else {
+    console.log("Nenhum cliente encontrado!");
+  }
 }
 
 function removerCliente() {
-    let cpf = scanner.question("Digite o cpf do cliente que você quer remover: ");
-    let index = retornarIndexCliente(cpf);
+  let cpf = scanner.question("Digite o cpf do cliente que você quer remover: ");
+  let index = retornarIndexCliente(cpf);
 
-    if (index !== -1) {
-        console.log("O cliente abaixo foi removido\n" +
-            clientes[index].toString());
-        clientes.splice(index, 1);
-    } else {
-        console.log("Nenhum cliente encontrado!");
-    }
+  if (index !== -1) {
+    console.log("O cliente abaixo foi removido\n" + clientes[index].toString());
+    clientes.splice(index, 1);
+  } else {
+    console.log("Nenhum cliente encontrado!");
+  }
 }
 
 function gerenciarCliente() {
-    let opcao;
+  let opcao;
 
-    do {
-        opcao = menu();
-        console.clear();
+  do {
+    opcao = menu();
+    console.clear();
 
-        switch (opcao) {
-            case 1:
-                console.log("Sistema de cadastro de clientes\n");
-                cadastrarCliente();
-                break;
+    switch (opcao) {
+      case 1:
+        console.log("Sistema de cadastro de clientes\n");
+        cadastrarCliente();
+        break;
 
-            case 2:
-                pesquisarCliente();
-                break;
+      case 2:
+        pesquisarCliente();
+        break;
 
-            case 3:
-                alterarDadosCliente();
-                break;
+      case 3:
+        alterarDadosCliente();
+        break;
 
-            case 4:
-                removerCliente();
-                break;
+      case 4:
+        removerCliente();
+        break;
 
-            case 5:
-                listarClientes();
-                break;
+      case 5:
+        listarClientes();
+        break;
 
-            case 6:
-                break;
+      case 6:
+        break;
 
-            default:
-                console.log("Opção inválida! Tente novamente.");
-                break;
-        }
-    } while (opcao !== 6)
+      default:
+        console.log("Opção inválida! Tente novamente.");
+        break;
+    }
+  } while (opcao !== 6);
 }
 
 export default {
-    gerenciarCliente, clientes, retornarIndexCliente
-}
+  gerenciarCliente,
+  clientes,
+  retornarIndexCliente,
+};

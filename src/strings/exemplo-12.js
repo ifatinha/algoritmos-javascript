@@ -1,28 +1,28 @@
 /** Capitulo 09 - Manipulando Cadeias de Caracteres: Exemplo 12
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
-import scanner from 'readline-sync'
+import scanner from "readline-sync";
 
 function criptografarPalavra(palavra) {
-    let novaPalavra = "";
+  let novaPalavra = "";
 
-    for (let i = palavra.length; i >= 0; i--) {
-        novaPalavra += palavra.charAt(i);
-    }
+  for (let i = palavra.length; i >= 0; i--) {
+    novaPalavra += palavra.charAt(i);
+  }
 
-    return novaPalavra;
+  return novaPalavra;
 }
 
 function criptografar(frase) {
-    let novaFrase = frase.split(" ");
-    novaFrase = novaFrase.reverse();
-    let fraseCriptografada = "";
+  let novaFrase = frase.split(" ");
+  novaFrase = novaFrase.reverse();
+  let fraseCriptografada = "";
 
-    for (let i = 0; i < novaFrase.length; i++) {
-        fraseCriptografada += criptografarPalavra(novaFrase[i]) + " ";
-    }
+  for (let i = 0; i < novaFrase.length; i++) {
+    fraseCriptografada += criptografarPalavra(novaFrase[i]) + " ";
+  }
 
-    return fraseCriptografada;
+  return fraseCriptografada;
 }
 
 let frase = scanner.question("Digite o texto que você deseja criptografar: ");

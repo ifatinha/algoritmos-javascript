@@ -6,14 +6,13 @@ import gerenciador from "./util/Gerenciador.js";
 const offices = [];
 
 for (let i = 0; i < 3; i++) {
-    offices.push(gerenciador.registerOffice());
+  offices.push(gerenciador.registerOffice());
 }
 
 offices.forEach(function (office) {
-    console.log("Código do cargo: " + office.code);
-    console.log("Valor da hora trabalhada: " + office.hourlyRate + "\n");
+  console.log("Código do cargo: " + office.code);
+  console.log("Valor da hora trabalhada: " + office.hourlyRate + "\n");
 });
 
 const employee = gerenciador.registerEmployee(offices);
 console.log(employee.toString());
-

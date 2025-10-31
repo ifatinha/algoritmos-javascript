@@ -6,37 +6,36 @@ import App from "./util/App.js";
 let opcao;
 
 do {
-    opcao = App.menu();
+  opcao = App.menu();
 
-    switch (opcao) {
-        case 1:
-            console.clear();
-            App.manutencaoProduto();
-            break;
+  switch (opcao) {
+    case 1:
+      console.clear();
+      App.manutencaoProduto();
+      break;
 
-        case 2:
-            console.clear();
-            App.manutencaoClientes();
-            break;
+    case 2:
+      console.clear();
+      App.manutencaoClientes();
+      break;
 
-        case 3:
-            console.clear();
-            App.manutencaoVendas();
-            break;
+    case 3:
+      console.clear();
+      App.manutencaoVendas();
+      break;
 
-        case 4:
-            console.clear();
-            App.relatorios();
-            break;
+    case 4:
+      console.clear();
+      App.relatorios();
+      break;
 
-        case 5:
-            console.clear();
-            console.log("Encerrando aplicação!");
-            break;
+    case 5:
+      console.clear();
+      console.log("Encerrando aplicação!");
+      break;
 
-        default:
-            console.log("Opção inválida!");
-            break;
-    }
-
-} while (opcao !== 5)
+    default:
+      console.log("Opção inválida!");
+      break;
+  }
+} while (opcao !== 5);
