@@ -1,19 +1,21 @@
 {
   "name": "algoritmos-javascript",
   "version": "1.0.0",
-  "description": "",
+  "description": "Coleção de algoritmos e exercícios em JavaScript para estudo e prática.",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "jest",
+    "lint": "eslint . --ext .js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ifatinha/algoritmos-javascript.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["javascript", "algoritmos", "exercicios", "estudo"],
+  "author": "Fatima Ferreira",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ifatinha/algoritmos-javascript/issues"
   },
@@ -21,5 +23,13 @@
   "dependencies": {
     "readline-sync": "^1.4.10",
     "utf8": "^3.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "prettier": "^3.6.2"
   }
 }
