@@ -96,7 +96,7 @@ Quer sugerir um novo algoritmo ou melhorar um código existente?
 4.  Crie um pull request explicando a proposta
 
 ## 🪪 Licença
-Este projeto está sob a licença **MIT** — veja o arquivo LICENSE
+Este projeto está sob a licença **MIT** — veja o arquivo [MIT License](./LICENSE).
 
 ## 💡 Autor
 Fatinha

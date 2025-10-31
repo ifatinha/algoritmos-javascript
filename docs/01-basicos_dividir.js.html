@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: funcoes/exemplo-23.js</title>
+    <title>JSDoc: Source: 01-basicos/dividir.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: funcoes/exemplo-23.js</h1>
+    <h1 class="page-title">Source: 01-basicos/dividir.js</h1>
 
     
 
@@ -26,39 +26,30 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** Capitulo 08 - sub-rotinas: Exemplo 23
- *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+            <pre class="prettyprint source linenums"><code>/**
+ * 📘 Função que realiza a divisão entre dois números.
+ * 
+ * @param {number} a - O dividendo (número a ser dividido).
+ * @param {number} b - O divisor (número pelo qual será feita a divisão).
+ * @returns {number} O resultado da divisão de `a` por `b`.
+ * @throws {Error} Se algum parâmetro não for número ou se tentar dividir por 0.
+ * 
+ * @example
+ * dividir(10, 2); // Retorna 5
+ * dividir(9, 3); // Retorna 3
+ */
 
-function lerDados() {
-  const matriz = [];
-  for (let i = 0; i &lt; 3; i++) {
-    const linha = [];
-    for (let j = 0; j &lt; 4; j++) {
-      linha.push(Math.floor(Math.random() * 9 + 1));
-    }
-    matriz.push(linha);
+export function dividir(a, b){
+  if(typeof a !== "number" || typeof b !== "number"){
+    throw new Error("Os parâmetros devem ser números.")
   }
 
-  return matriz;
-}
-
-function vetorNumeros(mat) {
-  const vet = [];
-  for (let i = 0; i &lt; 3; i++) {
-    const aux = mat[i];
-    for (let j = 0; j &lt; 4; j++) {
-      vet.push(aux[j]);
-    }
+  if(b === 0){
+    throw new Error("Divisão por 0 não é permitida.")
   }
 
-  return vet;
+  return a / b;
 }
-
-const matriz = lerDados();
-console.log("Matriz \n" + matriz.join("\n"));
-
-const vetor = vetorNumeros(matriz);
-console.log("Vetor: " + vetor.join(", "));
 </code></pre>
         </article>
     </section>
