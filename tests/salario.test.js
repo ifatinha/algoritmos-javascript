@@ -1,4 +1,4 @@
-import { calcularSalario } from "../src/01-basicos/exemplo-04.js";
+import { calcularSalario } from "../src/01-basicos/salario.js";
 
 describe("Função calcularSalario", () =>{
     test("deve lançar erro se o parâmetro não for número", () => {
