@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: funcoes/exemplo-15.js</title>
+    <title>JSDoc: Source: 01-basicos/media.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: funcoes/exemplo-15.js</h1>
+    <h1 class="page-title">Source: 01-basicos/media.js</h1>
 
     
 
@@ -26,31 +26,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>/** Capitulo 08 - sub-rotinas: Exemplo 15
- *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+            <pre class="prettyprint source linenums"><code>/**
+ * 📘 Calcula a média aritmética de três notas e retorna a situação do aluno.
+ *
+ * @param {number} nota1 - Primeira nota.
+ * @param {number} nota2 - Segunda nota.
+ * @param {number} nota3 - Terceira nota.
+ * @returns {{ media: number, status: string }} Um objeto com a média e o status ("Aprovado" ou "Reprovado").
+ * @throws {Error} Se algum parâmetro não for um número.
+ *
+ * @example
+ * calcularMedia(8, 7, 6); // { media: 7, status: "Aprovado" }
+ * calcularMedia(5, 4, 6); // { media: 5, status: "Reprovado" }
+ */
 
-function lerDados() {
-  const numeros = [];
-  for (let i = 0; i &lt; 20; i++) {
-    numeros.push(Math.floor(Math.random() * 999 + 1));
+export function calcularMedia(nota1, nota2, nota3){
+  if(typeof nota1 !== "number" || typeof nota2 !== "number" || typeof nota3 !== "number"){
+    throw new Error("Os parâmetros devem ser números.");
   }
 
-  return numeros;
-}
+  const media = (nota1 + nota2 + nota3) / 3;
 
-function ordenarNumeros(vet) {
-  vet.sort(function (a, b) {
-    return a - b;
-  });
+  const status = media >= 7.0 ? "Aprovado!" : "Reprovado!";
 
-  return vet;
-}
-
-const vet = lerDados();
-const vetOrdenado = ordenarNumeros(vet);
-console.log("Vetor: " + vet.join(" - "));
-console.log("Vetor ordenado: " + vetOrdenado.join(" - "));
-</code></pre>
+  return {media, status};
+}</code></pre>
         </article>
     </section>
 

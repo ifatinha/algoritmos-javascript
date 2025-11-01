@@ -1,0 +1,31 @@
+{
+  "source": {
+    "include": ["src"],
+    "includePattern": ".js$"
+  },
+
+  "plugins": ["plugins/markdown"],
+  "babel": {
+    "extensions": ["js"],
+    "presets": ["@babel/preset-env"]
+  },
+  "opts": {
+    "destination": "./docs",
+    "template": "node_modules/clean-jsdoc-theme",
+    "recurse": true
+  },
+
+  "templates": {
+    "cleanTheme": {
+      "theme": "dark",
+      "title": "Algoritmos em JavaScript",
+      "favicon": "https://cdn-icons-png.flaticon.com/512/5968/5968292.png",
+      "menu": {
+        "GitHub": {
+          "href": "https://github.com/ifatinha/algoritmos-javascript",
+          "target": "_blank"
+        }
+      }
+    }
+  }
+}
