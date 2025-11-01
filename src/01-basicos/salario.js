@@ -13,13 +13,13 @@
  * calcularSalario(1000); // { aumento: 100, novoSalario: 1100 }
  */
 
-export  function calcularSalario(salario){
-  if(typeof salario !== "number"){
+export function calcularSalario(salario) {
+  if (typeof salario !== "number") {
     throw new Error("Os parâmetros devem ser números.");
   }
 
   const aumento = salario <= 500 ? (salario * 20) / 100 : (salario * 10) / 100;
   const novoSalario = salario + aumento;
 
-  return {aumento, novoSalario}
+  return { aumento, novoSalario };
 }

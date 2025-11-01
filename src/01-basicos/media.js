@@ -12,8 +12,12 @@
  * calcularMedia(5, 4, 6); // { media: 5, status: "Reprovado" }
  */
 
-export function calcularMedia(nota1, nota2, nota3){
-  if(typeof nota1 !== "number" || typeof nota2 !== "number" || typeof nota3 !== "number"){
+export function calcularMedia(nota1, nota2, nota3) {
+  if (
+    typeof nota1 !== "number" ||
+    typeof nota2 !== "number" ||
+    typeof nota3 !== "number"
+  ) {
     throw new Error("Os parâmetros devem ser números.");
   }
 
@@ -21,5 +25,5 @@ export function calcularMedia(nota1, nota2, nota3){
 
   const status = media >= 7.0 ? "Aprovado!" : "Reprovado!";
 
-  return {media, status};
+  return { media, status };
 }

@@ -37,23 +37,23 @@ algoritmos-javascript/
 └── LICENSE # Licença MIT
 ```
 
-
 ---
 
 ## ⚙️ Tecnologias e Ferramentas
 
-| Ferramenta | Finalidade |
-|-------------|-------------|
-| **Node.js** | Ambiente de execução JavaScript |
-| **Jest** | Framework de testes |
-| **ESLint** | Verificação e padronização do código |
-| **Prettier** | Formatação automática do código |
-| **JSDoc** | Geração automática da documentação |
-| **Babel** | Compatibilidade entre versões do JavaScript |
+| Ferramenta   | Finalidade                                  |
+| ------------ | ------------------------------------------- |
+| **Node.js**  | Ambiente de execução JavaScript             |
+| **Jest**     | Framework de testes                         |
+| **ESLint**   | Verificação e padronização do código        |
+| **Prettier** | Formatação automática do código             |
+| **JSDoc**    | Geração automática da documentação          |
+| **Babel**    | Compatibilidade entre versões do JavaScript |
 
 ---
 
 ## 🧪 Executando o Projeto
+
 🔹 Instalar dependências
 
 ```
@@ -76,28 +76,27 @@ npm run docs
 
 O projeto segue as boas práticas recomendadas pela comunidade JavaScript:
 
-*   **ESLint + Prettier** para garantir legibilidade e consistência
-    
-*   **Commits padronizados** seguindo o padrão [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-    
-*   **Testes unitários** para validar o comportamento de cada função
-    
-*   **Documentação automática (JSDoc)** para facilitar o estudo e entendimento
+- **ESLint + Prettier** para garantir legibilidade e consistência
+- **Commits padronizados** seguindo o padrão [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- **Testes unitários** para validar o comportamento de cada função
+- **Documentação automática (JSDoc)** para facilitar o estudo e entendimento
 
 ## 🧠 Como Contribuir
+
 Quer sugerir um novo algoritmo ou melhorar um código existente?
 
 1.  Faça um fork do repositório
 
-```git checkout -b feat/novo-algoritmo```
-    
+`git checkout -b feat/novo-algoritmo`
+
 3.  Faça suas alterações e documente-as
-    
 4.  Crie um pull request explicando a proposta
 
 ## 🪪 Licença
+
 Este projeto está sob a licença **MIT** — veja o arquivo [MIT License](./LICENSE).
 
 ## 💡 Autor
+
 Fatinha
 [💻 github.com/ifatinha](https://github.com/ifatinha)
