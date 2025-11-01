@@ -1,4 +1,4 @@
-import { conversor } from "../src/01-basicos/conversor.js";
+import { conversor } from "../src/01-basicos/conversorMedidas.js";
 
 describe("Função conversor", () => {
   test("deve converter corretamente pés em polegadas, jardas e milhas", () => {
