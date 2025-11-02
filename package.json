@@ -9,8 +9,9 @@
     "test": "jest",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "docs": "jsdoc -c jsdoc.json",
-    "prepare": "husky"
+    "docs": "jsdoc -c jsdoc.json && npm run gerar-docs-index",
+    "prepare": "husky",
+    "gerar-docs-index": "node scripts/gerarIndex.js"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,13 @@
     "jest": "^30.2.0",
     "jsdoc": "^4.0.5",
     "jsdoc-babel": "^0.5.0",
+    "lint-staged": "^16.2.6",
     "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }

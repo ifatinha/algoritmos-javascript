@@ -1,7 +1,8 @@
 {
   "source": {
     "include": ["src"],
-    "includePattern": ".js$"
+    "includePattern": ".js$",
+    "excludePattern": "(node_modules|tests)"
   },
 
   "plugins": ["plugins/markdown"],
@@ -10,7 +11,7 @@
     "presets": ["@babel/preset-env"]
   },
   "opts": {
-    "destination": "./docs",
+    "destination": "./docs/api",
     "template": "node_modules/clean-jsdoc-theme",
     "recurse": true
   },
