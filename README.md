@@ -24,15 +24,17 @@ algoritmos-javascript/
 │ ├── 02-condicionais/ # Estruturas de decisão
 │ ├── 03-repeticoes/ # Estruturas de repetição
 │ ├── 04-funcoes/ # Modularização e boas práticas
-│ └── ...
+│ └── ... # Outros módulos
 │
 ├── tests/ # Testes automatizados com Jest
 │
 ├── docs/ # Documentação gerada automaticamente (JSDoc)
 │
+├── scripts/ # Scripts auxiliares (ex: gerar index.md automático)
+│
 ├── .eslintrc.json # Regras de linting (código limpo e padronizado)
 ├── .prettierrc # Configurações de formatação (estilo de código)
-├── package.json # Dependências e scripts
+├── package.json # Dependências e scripts npm
 ├── README.md # Este arquivo 📘
 └── LICENSE # Licença MIT
 ```
