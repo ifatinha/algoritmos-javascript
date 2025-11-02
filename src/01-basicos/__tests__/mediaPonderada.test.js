@@ -1,4 +1,4 @@
-import { mediaPonderada } from "../src/01-basicos/mediaPonderada.js";
+import { mediaPonderada } from "../mediaPonderada.js";
 
 describe("Função mediaPonderada", () => {
   test("deve calcular corretamente a média ponderada", () => {

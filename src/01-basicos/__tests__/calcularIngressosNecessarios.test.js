@@ -1,4 +1,4 @@
-import { calcularIngressosNecessarios } from "../src/01-basicos/calcularIngressosNecessarios.js";
+import { calcularIngressosNecessarios } from "../calcularIngressosNecessarios.js";
 
 describe("Função calcularIngressosNecessarios", () => {
   test("deve calcular corretamente o número mínimo de ingressos necessários", () => {

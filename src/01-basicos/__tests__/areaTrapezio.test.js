@@ -1,4 +1,4 @@
-import { areaTrapezio } from "../src/01-basicos/areaTrapezio.js";
+import { areaTrapezio } from "../areaTrapezio.js";
 
 describe("Função areaTrapezio", () => {
   test("deve calcular corretamente a área do trapézio", () => {

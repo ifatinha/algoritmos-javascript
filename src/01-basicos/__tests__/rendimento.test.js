@@ -1,4 +1,4 @@
-import { calcularRendimentos } from "../src/01-basicos/rendimento.js";
+import { calcularRendimentos } from "../rendimento.js";
 
 describe("Função calcularRendimentos", () => {
   test("calcular o rendimento e o saldo final", () => {

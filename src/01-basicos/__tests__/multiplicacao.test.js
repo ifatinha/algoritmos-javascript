@@ -1,4 +1,4 @@
-import { multiplicar } from "../src/01-basicos/multiplicacao.js";
+import { multiplicar } from "../multiplicacao.js";
 
 describe("Função multiplicar", () => {
   test("Deve retornar o produto correto de dois números", () => {

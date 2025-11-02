@@ -1,4 +1,4 @@
-import { calcularSalarioFinal } from "../src/01-basicos/salarioBase.js";
+import { calcularSalarioFinal } from "../salarioBase.js";
 
 describe("Função calcularSalarioFinal", () => {
   test("deve calcular corretamente o sálario com gratificação e imposto", () => {

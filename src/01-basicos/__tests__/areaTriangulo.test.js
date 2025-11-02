@@ -1,4 +1,4 @@
-import { calcularAreaTriangulo } from "../src/01-basicos/areaTriangulo.js";
+import { calcularAreaTriangulo } from "../areaTriangulo.js";
 
 describe("Função calcularAreaTriangulo", () => {
   test("deve calcular a area do triângulo corretamente", () => {

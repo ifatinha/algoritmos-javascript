@@ -1,4 +1,4 @@
-import { dividir } from "../src/01-basicos/dividir.js";
+import { dividir } from "../dividir.js";
 
 describe("Função dividir", () => {
   test("deve dividir dois números corretamente", () => {

@@ -1,4 +1,4 @@
-import { calcularContaEnergia } from "../src/01-basicos/calcularContaEnergia.js";
+import { calcularContaEnergia } from "../calcularContaEnergia.js";
 
 describe("Função calcularContaEnergia", () => {
   test("deve calcular corretamente os valores da conta de energia", () => {

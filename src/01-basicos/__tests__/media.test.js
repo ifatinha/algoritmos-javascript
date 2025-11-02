@@ -1,4 +1,4 @@
-import { calcularMedia } from "../src/01-basicos/media.js";
+import { calcularMedia } from "../media.js";
 
 describe("Função calcularMedia", () => {
   test("deve calcular a média corretamente e retornar status Aprovado", () => {

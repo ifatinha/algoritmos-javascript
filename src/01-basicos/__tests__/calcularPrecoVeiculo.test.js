@@ -1,4 +1,4 @@
-import { calcularPrecoFinal } from "../src/01-basicos/calcularPrecoVeiculo.js";
+import { calcularPrecoFinal } from "../calcularPrecoVeiculo.js";
 
 describe("Função calcularPrecoFinal", () => {
   test("deve calcular corretamente o preço final, lucro e imposto", () => {

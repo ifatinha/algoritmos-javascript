@@ -1,4 +1,4 @@
-import { calcularAreaCirculo } from "../src/01-basicos/areaCirculo.js";
+import { calcularAreaCirculo } from "../areaCirculo";
 
 describe("Função calcularAreaCirculo", () => {
   test("deve calcular a área do círculo corretamente", () => {

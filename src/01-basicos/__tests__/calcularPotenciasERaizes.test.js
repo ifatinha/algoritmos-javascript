@@ -1,4 +1,4 @@
-import { calcularPotenciasERaizes } from "../src/01-basicos/calcularPotenciasERaizes.js";
+import { calcularPotenciasERaizes } from "../calcularPotenciasERaizes.js";
 
 describe("Função calcularPotenciasERaizes", () => {
   test("deve calcular as quadrado, cubo e raízes corretamente", () => {

@@ -1,4 +1,4 @@
-import { areaLosango } from "../src/01-basicos/areaLosango.js";
+import { areaLosango } from "../areaLosango.js";
 
 describe("Função areaLosango", () => {
   test("deve calcular corretamente a área do losango", () => {

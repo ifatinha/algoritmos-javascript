@@ -1,4 +1,4 @@
-import { calcularIdade } from "../src/01-basicos/calcularIdade.js";
+import { calcularIdade } from "../calcularIdade.js";
 
 describe("Função calcularIdade", () => {
   test("deve calcular a idade atual e a idade em 2050 corretamente", () => {

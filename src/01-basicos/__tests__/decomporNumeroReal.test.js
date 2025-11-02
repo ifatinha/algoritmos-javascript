@@ -1,4 +1,4 @@
-import { decomporNumeroReal } from "../src/01-basicos/decomporNumeroReal.js";
+import { decomporNumeroReal } from "../decomporNumeroReal.js";
 
 describe("Função decomporNumeroReal", () => {
   test("deve decompor corretamente um número real positivo", () => {
