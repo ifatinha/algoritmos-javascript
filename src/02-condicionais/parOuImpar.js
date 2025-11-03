@@ -1,6 +1,7 @@
 /**
  * Verifica se um número inteiro é par ou ímpar.
  *
+ * @category Condicionais
  * @param {number} numero - Número inteiro a ser verificado.
  * @returns {"par"|"impar"} Retorna `"par"` se o número for par e `"impar"` caso contrário.
  * @throws {Error} Se o valor não for um número inteiro válido.

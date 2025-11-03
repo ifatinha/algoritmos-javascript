@@ -1,6 +1,7 @@
 /**
  * Retorna um conjunto de números em ordem crescente.
  *
+ * @category Condicionais
  * @param {number[]} num1 - Array com os números a serem ordenados
  * @returns {number[]} Array com os números em ordem crescente
  * @throws {Error} Se algum dos valores não for um número válido ou se houver números repetidos

@@ -13,6 +13,7 @@
  * - 5,0 - 6,0  => D
  * - 0,0 - 5,0  => E
  *
+ * @category Condicionais
  * @param {number} trabalho - Nota do trabalho de laboratório (0 a 10)
  * @param {number} avaliacao - Nota da avaliação semestral (0 a 10)
  * @param {number} exame - Nota do exame final (0 a 10)
