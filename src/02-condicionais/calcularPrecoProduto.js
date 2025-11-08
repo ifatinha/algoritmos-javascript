@@ -30,8 +30,10 @@ export function calcularPrecoProduto(preco, vendaMensal) {
   if (vendaMensal < 500 && preco < 30) {
     novoPreco = preco * 1.1;
   } else if (
-    (vendaMensal >= 500 && vendaMensal < 1200) &&
-    (preco >= 30 && preco < 80)
+    vendaMensal >= 500 &&
+    vendaMensal < 1200 &&
+    preco >= 30 &&
+    preco < 80
   ) {
     novoPreco = preco * 1.15;
   } else if (vendaMensal >= 1200 && preco >= 80) {
