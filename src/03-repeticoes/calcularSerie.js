@@ -35,7 +35,7 @@ export function calcularSerie(numTermos, x) {
   }
 
   if (typeof x !== "number" || isNaN(x) || x < 0 || !Number.isInteger(x)) {
-    throw new Error("O valor de X deve ser um número inteiro maior que zero.");
+    throw new Error("O valor de X deve ser um número inteiro.");
   }
 
   let soma = 0;
