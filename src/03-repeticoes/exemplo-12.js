@@ -16,7 +16,7 @@ let matriculaMaiorSal = 0;
 for (let i = 1; i <= 5; i++) {
   console.log("Dados do " + i + "º funcionário.");
   let matricula = scanner.questionInt(
-    "Digite a matricula do " + i + "º operadio:"
+    "Digite a matricula do " + i + "º operario:"
   );
   let sexo = scanner.question("Digite o sexo do operario(a) (M ou F): ");
   let numPecas = scanner.questionInt(
