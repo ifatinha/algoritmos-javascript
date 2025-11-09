@@ -19,7 +19,7 @@ describe("Função calcularSerie", () => {
 
   test("deve lançar erro para X inválido", () => {
     expect(() => calcularSerie(4, "x")).toThrow(
-      "O valor de X deve ser um número inteiro maior que zero."
+      "O valor de X deve ser um número inteiro."
     );
   });
 });
