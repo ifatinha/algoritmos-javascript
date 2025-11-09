@@ -1,6 +1,10 @@
 /** Capitulo 05 - estruturas de repetição: Exemplo 06
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
+export function salarioFuncionario(funcionarios){
+  
+}
+
 import scanner from "readline-sync";
 
 let valorHoraTrab = 0.0;
