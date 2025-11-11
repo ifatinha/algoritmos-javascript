@@ -1,6 +1,24 @@
-/** Capitulo 09 - Manipulando Cadeias de Caracteres: Exemplo 01
- *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+/**
+ * @category Strings
+ * @function contarVogais
+ * @description
+ * Conta o número de vogais em uma frase, desconsiderando maiúsculas e minúsculas.
+ *
+ * @param {string} frase Frase a ser analisada.
+ * @throws {Error} Caso o parâmetro não seja uma string.
+ * @returns {number} Quantidade total de vogais encontradas.
+ *
+ * @example
+ * contarVogais("Olá Mundo") // retorno: 4
+ */
 
+export function contarVogais(frase) {
+  if (typeof frase !== "string" || frase.length === 0) {
+    throw new Error("O parâmetro deve ser uma string válida.");
+  }
+
+  
+}
 import scanner from "readline-sync";
 
 function contarVogais(frase) {
