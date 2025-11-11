@@ -13,7 +13,7 @@
  */
 
 export function contarVogais(frase) {
-  if (typeof frase !== "string" || frase.length === 0) {
+  if (typeof frase !== "string" || frase.trim().length === 0) {
     throw new Error("O parâmetro deve ser uma string válida.");
   }
 
