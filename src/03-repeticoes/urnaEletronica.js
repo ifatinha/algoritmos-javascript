@@ -1,6 +1,48 @@
-/** Capitulo 05 - estruturas de repetição: Exercicio Proposto 21
- *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
+/**
+ * @category Repetições
+ * @function contabilizarVotos
+ * @description
+ * Simula a apuração de votos da urna eletrônica para quatro candidatos,
+ * votos nulos e brancos.
+ *
+ * @param {number[]} votos - Lista de votos representados por códigos:
+ * 1 = A, 2 = B, 3 = C, 4 = D, 5 = Nulo, 6 = Branco, 0 = Fim da votação
+ *
+ * @returns {{
+ *  totalVotos: number,
+ *  candidatoA: number,
+ *  candidatoB: number,
+ *  candidatoC: number,
+ *  candidatoD: number,
+ *  nulos: number,
+ *  brancos: number,
+ *  percA: number,
+ *  percB: number,
+ *  percC: number,
+ *  percD: number,
+ *  percNulos: number,
+ *  percBrancos: number
+ * }}
+ *
+ * @throws {Error} Caso algum voto seja inválido (fora do intervalo 0-6)
+ *
+ * @example
+ * contabilizarVotos([1,2,5,0]);
+ */
 
+export function contabilizarVotos(votos) {
+  if (!Array.isArray(votos)) {
+    throw new Error("A entrada deve ser um array de votos.");
+  }
+
+  let candidatoA = 0;
+  let candidatoB = 0;
+  let candidatoC = 0;
+  let candidatoD = 0;
+  let nulos = 0;
+  let brancos = 0;
+  let totalVotos = 0;
+}
 import scanner from "readline-sync";
 
 let candidatoA = 0;
