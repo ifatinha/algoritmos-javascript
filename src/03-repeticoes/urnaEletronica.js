@@ -42,6 +42,8 @@ export function contabilizarVotos(votos) {
   let nulos = 0;
   let brancos = 0;
   let totalVotos = 0;
+
+  votos.forEach
 }
 import scanner from "readline-sync";
 
