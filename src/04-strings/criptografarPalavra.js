@@ -1,6 +1,20 @@
 /** Capitulo 09 - Manipulando Cadeias de Caracteres: Exemplo 12
  *  Livro Fundamentos da Programação de Computadores - Algoritmos em Pascal, C e C++ */
 
+export function criptografarPalavra(palavra) {
+  if (typeof palavra !== "string" || palavra.trim().length === 0) {
+    throw new Error("A entrada deve ser uma string válida.");
+  }
+
+  let novaPalavra = "";
+
+  for (let i = 0; i < palavra.length; i++) {
+    novaPalavra += palavra.charAt(i);
+  }
+
+  
+}
+
 import scanner from "readline-sync";
 
 function criptografarPalavra(palavra) {
