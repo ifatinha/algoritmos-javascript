@@ -9,7 +9,7 @@ export function gerarLogin(nome) {
   const partes = nome.trim().split(/\s+/);
 
   if (partes.length < 2) {
-    throw new Error("A entrada deve ser de pelo menos dois partes.");
+    throw new Error("A entrada deve ser de pelo menos duas partes.");
   }
 
   const iniciais = partes
@@ -20,5 +20,3 @@ export function gerarLogin(nome) {
 
   return (iniciais + ultimoSobrenome).toLowerCase();
 }
-
-console.log(gerarLogin("Ethan Desmond Duncan Shepherd"));
