@@ -27,7 +27,7 @@ export function contarLetra(texto, letra, { caseSensitive = false } = {}) {
     throw new Error("A entrada 'letra' deve ser uma string válida.");
   }
 
-  const termoEscapado = letra.replace(/[.*+?!${}()|[\]\\]/g, "\\$&");
+  const termoEscapado = letra.replace(/[.*+?${}()|[\]\\]/g, "\\$&");
   const flags = caseSensitive ? "g" : "gi";
   const regex = new RegExp(termoEscapado, flags);
   const matches = texto.match(regex);
