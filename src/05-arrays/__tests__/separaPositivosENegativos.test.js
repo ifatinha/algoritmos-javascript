@@ -10,6 +10,20 @@ describe("Função separaPositivosENegativos", () => {
     });
   });
 
+  test("deve funcionar quando todos os elementos forem positivos", () => {
+    expect(separaPositivosENegativos([1, 2, 3, 4])).toEqual({
+      positivos: [1, 2, 3, 4],
+      negativos: [],
+    });
+  });
+
+  test("deve funcionar quando todos os elementos forem negativos", () => {
+    expect(separaPositivosENegativos([-1, -2, -3, -4])).toEqual({
+      positivos: [],
+      negativos: [-1, -2, -3, -4],
+    });
+  });
+
   test("deve lançar erro para array vazio ou inválido", () => {
     expect(() => separaPositivosENegativos([])).toThrow(
       "A entrada deve ser um array não vazio"
