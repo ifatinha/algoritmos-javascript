@@ -72,12 +72,7 @@ export function validarMapaPoltronas(mapa) {
   }
 
   for (let idx = 0; idx < janela.length; idx++) {
-    if (
-      typeof janela[idx] !== "number" ||
-      typeof corredor[idx] !== "number" ||
-      janela[idx] !== 0 ||
-      corredor[idx] !== 0
-    ) {
+    if (typeof janela[idx] !== "number" || typeof corredor[idx] !== "number") {
       throw new Error(
         "Os valores do mapa de poltrona devem ser númericos (0 ou 1)"
       );
