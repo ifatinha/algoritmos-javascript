@@ -46,7 +46,7 @@ export class Tipo {
 
   set percentual(value) {
     if (typeof value !== "number" || Number.isNaN(value) || value < 0) {
-      throw new Error("O campo 'percentual' deve ser um número >= 0");
+      throw new Error("O campo 'percentual' deve ser um número válido >= 0");
     }
 
     this.#percentual = value;

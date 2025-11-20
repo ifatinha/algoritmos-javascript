@@ -96,5 +96,3 @@ export function relatorioProdutos(produtos) {
     qtdProdutosPrecosMenor100,
   };
 }
-
-console.log(relatorioProdutos(produtos));
