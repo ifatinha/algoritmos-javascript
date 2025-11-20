@@ -5,7 +5,7 @@ const tipoLimpeza = new Tipo({ code: 1, percentual: 12 });
 const detergente = new Produto({
   description: "Detergente 500ml",
   type: tipoLimpeza,
-  price: 8.2,
+  price: 8.5,
 });
 
 console.log(detergente.toString());

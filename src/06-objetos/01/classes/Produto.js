@@ -86,7 +86,9 @@ export class Produto {
       Number.isNaN(percentual) ||
       percentual < 0
     ) {
-      throw new Error("O campo 'type.percentual' deve ser um número >= 0.");
+      throw new Error(
+        "O campo 'type.percentual' deve ser um número válido >= 0."
+      );
     }
 
     this.#type = { code, percentual };
@@ -99,7 +101,7 @@ export class Produto {
 
   set price(value) {
     if (typeof value !== "number" || isNaN(value) || value < 0) {
-      throw new Error("O campo 'price' deve ser um número >= 0");
+      throw new Error("O campo 'price' deve ser um número válido >= 0");
     }
 
     this.#price = value;
@@ -166,7 +168,7 @@ export class Produto {
       description: this.#description,
       type: this.#type ? { ...this.#type } : null,
       price: this.#price,
-      tax: this.#tax.toFixed(2),
+      tax: Number(this.#tax.toFixed(2)),
       finalPreco: this.finalPrice,
     };
   }
