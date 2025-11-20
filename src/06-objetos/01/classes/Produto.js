@@ -17,6 +17,8 @@
  * p.finalPrice // 110
  */
 
+import { Tipo } from "./Tipo.js";
+
 export class Produto {
   #description;
   #type;
@@ -67,29 +69,15 @@ export class Produto {
    * Espera um objeto com pelo menos: { code: number, percentual: number }.
    */
   set type(value) {
+    if (!(value instanceof Tipo)) {
+      throw new Error("O campo 'type' deve ser uma instância de Tipo.");
+    }
+
     if (typeof value !== "object" || value === null) {
       throw new Error("O campo 'type' deve ser um objeto válido");
     }
 
     const { code, percentual } = value;
-
-    if (
-      typeof code !== "number" ||
-      !Number.isInteger(code) ||
-      Number.isNaN(code)
-    ) {
-      throw new Error("O campo 'type.code' deve ser um número inteiro.");
-    }
-
-    if (
-      typeof percentual !== "number" ||
-      Number.isNaN(percentual) ||
-      percentual < 0
-    ) {
-      throw new Error(
-        "O campo 'type.percentual' deve ser um número válido >= 0."
-      );
-    }
 
     this.#type = { code, percentual };
     this.#tax = this.#computeTax();

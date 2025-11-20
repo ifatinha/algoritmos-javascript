@@ -1,8 +1,9 @@
 import { Produto } from "../classes/Produto.js";
+import { Tipo } from "../classes/Tipo.js";
 
 describe("Classe Produto", () => {
   test("deve criar um objeto produto corretamente", () => {
-    const tipo = { code: 1, percentual: 10 };
+    const tipo = new Tipo({ code: 1, percentual: 10 });
     const produto = new Produto({
       description: "Camiseta",
       type: tipo,
@@ -17,7 +18,7 @@ describe("Classe Produto", () => {
   });
 
   test("deve calcular preço e recalcular taxa e preço final", () => {
-    const type = { code: 1, percentual: 5 };
+    const type = new Tipo({ code: 1, percentual: 5 });
     const produto = new Produto({
       description: "Teclado sem fio",
       type: type,
@@ -31,7 +32,7 @@ describe("Classe Produto", () => {
   });
 
   test("deve retornar valores corretos para toString() e toJSON()", () => {
-    const type = { code: 1, percentual: 15 };
+    const type = new Tipo({ code: 1, percentual: 15 });
     const produto = new Produto({
       description: "Mouse sem fio",
       type,
@@ -60,25 +61,25 @@ describe("Classe Produto", () => {
       () =>
         new Produto({
           description: "Mouse",
-          type: { code: "1", percentual: 5 },
+          type: new Tipo({ code: "1", percentual: 5 }),
           price: 10,
         })
-    ).toThrow("O campo 'type.code' deve ser um número inteiro.");
+    ).toThrow("O campo 'code' deve ser um número inteiro");
 
     expect(
       () =>
         new Produto({
           description: "Mouse",
-          type: { code: 1, percentual: -20 },
+          type: new Tipo({ code: 1, percentual: -20 }),
           price: 10,
         })
-    ).toThrow("O campo 'type.percentual' deve ser um número válido >= 0.");
+    ).toThrow("O campo 'percentual' deve ser um número válido >= 0");
 
     expect(
       () =>
         new Produto({
           description: "Mouse",
-          type: { code: 1, percentual: 20 },
+          type: new Tipo({ code: 1, percentual: 20 }),
           price: -10,
         })
     ).toThrow("O campo 'price' deve ser um número válido >= 0");
